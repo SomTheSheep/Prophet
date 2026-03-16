@@ -1,0 +1,14 @@
+# Ignore configuration files with real URLs and tokens
+config.yaml
+.env
+
+# Ignore Python virtual environments
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Ignore Kubernetes secrets or local deployment scripts with sensitive info
+*.pem
+*.key
+kubeconfig

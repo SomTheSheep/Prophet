@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: prophet-forecaster
+  namespace: sre
+  labels:
+    app: prophet-forecaster
+    release: prometheus-operator
+spec:
+  selector:
+    matchLabels:
+      app: prophet-forecaster
+  endpoints:
+    - port: http
+      interval: 60s
+      path: /metrics

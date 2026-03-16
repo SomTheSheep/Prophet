@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prophet-forecaster
+  namespace: sre
+  labels:
+    app: prophet-forecaster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prophet-forecaster
+  template:
+    metadata:
+      labels:
+        app: prophet-forecaster
+    spec:
+      containers:
+        - name: prophet-forecaster
+          image: sohamsal2026/prophet-forecaster:v1
+          ports:
+            - containerPort: 8000
+          env:
+            - name: CONFIG_PATH
+              value: "/app/config.yaml"
+            - name: PROMETHEUS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: prometheus-auth
+                  key: token
+          volumeMounts:
+            - name: config
+              mountPath: /app/config.yaml
+              subPath: config.yaml
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 120
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 120
+            periodSeconds: 10
+      volumes:
+        - name: config
+          configMap:
+            name: prophet-forecaster-config

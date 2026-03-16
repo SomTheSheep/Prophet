@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prophet-forecaster-config
+  namespace: sre
+data:
+  config.yaml: |
+    prometheus:
+      url: "https://prometheus.sitopflab03.otv-staging.com"
+
+    data:
+      use_historical: false
+      lookback_days: 14
+
+    metrics:
+      - name: "memory_adm"
+        query: 'sum(container_memory_working_set_bytes{namespace="otvpcse",container=~"adm.*"})'
+        forecast_periods: 60
+        seasonality: "daily"
+
+      - name: "memory_keycloak"
+        query: 'sum(container_memory_working_set_bytes{namespace="otvpcse",container=~"keycloak.*"})'
+        forecast_periods: 60
+        seasonality: "daily"
+
+      - name: "cpu_adm"
+        query: 'sum(rate(container_cpu_usage_seconds_total{namespace="otvpcse",container=~"adm.*"}[5m]))'
+        forecast_periods: 60
+        seasonality: "daily"
+
+      - name: "cpu_keycloak"
+        query: 'sum(rate(container_cpu_usage_seconds_total{namespace="otvpcse",container=~"keycloak.*"}[5m]))'
+        forecast_periods: 60
+        seasonality: "daily"
