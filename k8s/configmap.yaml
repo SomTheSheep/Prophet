@@ -24,6 +24,7 @@ data:
         seasonality: "daily"
 
       - name: "disk_elasticsearch01_used"
-        query: '1-(elasticsearch_filesystem_data_available_bytes{host=~"elasticsearch01"}/elasticsearch_filesystem_data_size_bytes{host=~"elasticsearch01"})'
+        query: '1 - (sum(elasticsearch_filesystem_data_available_bytes{host="elasticsearch01"})/sum(elasticsearch_filesystem_data_size_bytes{host="elasticsearch01"}))'
         forecast_periods: 60
         seasonality: "daily"
+      
