@@ -33,4 +33,12 @@ data:
           rate(elasticsearch_indices_search_query_time_seconds{host="elasticsearch01"}[5m]) / (rate(elasticsearch_indices_search_query_total{host="elasticsearch01"}[5m]) > 0)
         forecast_periods: 60
         seasonality: "daily"
+        
+      - name: "heap_baseline_elasticsearch01"
+        query: >-
+          min_over_time(elasticsearch_jvm_memory_used_bytes{host="elasticsearch01"}[30m]) 
+          / 
+          elasticsearch_jvm_memory_max_bytes{host="elasticsearch01"}
+        forecast_periods: 60
+        seasonality: "daily"
       
