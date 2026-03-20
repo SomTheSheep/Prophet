@@ -28,3 +28,9 @@ data:
         forecast_periods: 60
         seasonality: "daily"
       
+      - name: "search_latency_elasticsearch01"
+        query: >-
+          rate(elasticsearch_indices_search_query_time_seconds{host="elasticsearch01"}[5m]) / (rate(elasticsearch_indices_search_query_total{host="elasticsearch01"}[5m]) > 0)
+        forecast_periods: 60
+        seasonality: "daily"
+      
