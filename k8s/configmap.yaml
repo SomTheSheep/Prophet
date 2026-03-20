@@ -23,12 +23,12 @@ data:
         forecast_periods: 60
         seasonality: "daily"
 
-      - name: "cpu_adm"
-        query: 'sum(rate(container_cpu_usage_seconds_total{namespace="otvpcse",container=~"adm.*"}[5m]))'
+      - name: "memory_elasticsearch01_used"
+        query: 'sum(node_memory_MemTotal_bytes{instance="elasticsearch01", job="elasticsearch-nodes"} - node_memory_MemAvailable_bytes{instance="elasticsearch01", job="elasticsearch-nodes"})'
         forecast_periods: 60
         seasonality: "daily"
 
-      - name: "cpu_keycloak"
-        query: 'sum(rate(container_cpu_usage_seconds_total{namespace="otvpcse",container=~"keycloak.*"}[5m]))'
+      - name: "cpu_elasticsearch01_used"
+        query: 'avg by (instance) (rate(node_cpu_seconds_total{mode!="idle", instance="elasticsearch01", job="elasticsearch-nodes"}[5m])) * 100'
         forecast_periods: 60
         seasonality: "daily"
