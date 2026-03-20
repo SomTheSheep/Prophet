@@ -13,16 +13,6 @@ data:
       lookback_days: 14
 
     metrics:
-      - name: "memory_adm"
-        query: 'sum(container_memory_working_set_bytes{namespace="otvpcse",container=~"adm.*"})'
-        forecast_periods: 60
-        seasonality: "daily"
-
-      - name: "memory_keycloak"
-        query: 'sum(container_memory_working_set_bytes{namespace="otvpcse",container=~"keycloak.*"})'
-        forecast_periods: 60
-        seasonality: "daily"
-
       - name: "memory_elasticsearch01_used"
         query: 'sum(node_memory_MemTotal_bytes{instance="elasticsearch01", job="elasticsearch-nodes"} - node_memory_MemAvailable_bytes{instance="elasticsearch01", job="elasticsearch-nodes"})'
         forecast_periods: 60
@@ -30,5 +20,10 @@ data:
 
       - name: "cpu_elasticsearch01_used"
         query: 'avg by (instance) (rate(node_cpu_seconds_total{mode!="idle", instance="elasticsearch01", job="elasticsearch-nodes"}[5m])) * 100'
+        forecast_periods: 60
+        seasonality: "daily"
+
+      - name: "disk_elasticsearch01_used"
+        query: '1-(elasticsearch_filesystem_data_available_bytes{host=~"elasticsearch01"}/elasticsearch_filesystem_data_size_bytes{host=~"elasticsearch01"})'
         forecast_periods: 60
         seasonality: "daily"
