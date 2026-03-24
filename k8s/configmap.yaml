@@ -35,7 +35,7 @@ data:
         seasonality: "daily"
         
       - name: "heap_baseline_elasticsearch01"
-        query: 'min_over_time(elasticsearch_jvm_memory_used_bytes{host="elasticsearch01"}[30m])'
+        query: 'min_over_time(elasticsearch_jvm_memory_used_bytes{host="elasticsearch01", area = "heap"}[30m])'
         forecast_periods: 60
         seasonality: "daily"
       
