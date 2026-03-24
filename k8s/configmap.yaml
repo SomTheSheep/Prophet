@@ -39,3 +39,20 @@ data:
         forecast_periods: 60
         seasonality: "daily"
       
+      - name: "rabbitmq_messages_ready_total"
+        query: 'sum(rabbitmq_queue_messages_ready)'
+        forecast_periods: 60
+        seasonality: "daily"
+
+      - name: "rabbitmq_publish_consume_delta"
+        query: >-
+          sum(rate(rabbitmq_queue_messages_published_total[5m])) 
+          - 
+          sum(rate(rabbitmq_queue_messages_delivered_total[5m]))
+        forecast_periods: 60
+        seasonality: "daily"
+
+      - name: "rabbitmq_active_consumers"
+        query: 'sum(rabbitmq_queue_consumers)'
+        forecast_periods: 60
+        seasonality: "daily"

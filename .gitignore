@@ -8,6 +8,9 @@ env/
 __pycache__/
 *.pyc
 
+#Ignore agent directory
+.github/ 
+
 # Ignore Kubernetes secrets or local deployment scripts with sensitive info
 *.pem
 *.key
