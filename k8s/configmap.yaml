@@ -15,28 +15,28 @@ data:
     metrics:
       - name: "memory_elasticsearch01_used"
         query: 'sum(node_memory_MemTotal_bytes{instance="elasticsearch01", job="elasticsearch-nodes"} - node_memory_MemAvailable_bytes{instance="elasticsearch01", job="elasticsearch-nodes"})'
-        forecast_periods: 60
+        forecast_periods: 1440
         seasonality: "daily"
 
       - name: "cpu_elasticsearch01_used"
         query: 'avg by (instance) (rate(node_cpu_seconds_total{mode!="idle", instance="elasticsearch01", job="elasticsearch-nodes"}[5m])) * 100'
-        forecast_periods: 60
+        forecast_periods: 1440
         seasonality: "daily"
 
       - name: "disk_elasticsearch01_used"
         query: 'sum(elasticsearch_filesystem_data_size_bytes{host="elasticsearch01"}) - sum(elasticsearch_filesystem_data_available_bytes{host="elasticsearch01"})'
-        forecast_periods: 60
+        forecast_periods: 1440
         seasonality: "daily"
       
       - name: "search_latency_elasticsearch01"
         query: >-
           rate(elasticsearch_indices_search_query_time_seconds{host="elasticsearch01"}[5m]) / (rate(elasticsearch_indices_search_query_total{host="elasticsearch01"}[5m]) > 0)
-        forecast_periods: 60
+        forecast_periods: 1440
         seasonality: "daily"
         
       - name: "heap_baseline_elasticsearch01"
         query: 'min_over_time(elasticsearch_jvm_memory_used_bytes{host="elasticsearch01", area = "heap"}[30m])'
-        forecast_periods: 60
+        forecast_periods: 1440
         seasonality: "daily"
       
       - name: "rabbitmq_messages_ready_total"
@@ -49,10 +49,20 @@ data:
           sum(rate(rabbitmq_queue_messages_published_total[5m])) 
           - 
           sum(rate(rabbitmq_queue_messages_delivered_total[5m]))
-        forecast_periods: 60
+        forecast_periods: 1440
         seasonality: "daily"
 
       - name: "rabbitmq_active_consumers"
         query: 'sum(rabbitmq_queue_consumers)'
         forecast_periods: 60
+        seasonality: "daily"
+
+      - name: "rabbitmq_memory_used"
+        query: 'sum(rabbitmq_node_mem_used)'
+        forecast_periods: 1440
+        seasonality: "daily"
+
+      - name: "rabbitmq_disk_free"
+        query: 'sum(rabbitmq_node_disk_free)'
+        forecast_periods: 1440
         seasonality: "daily"

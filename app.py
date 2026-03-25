@@ -22,6 +22,7 @@ forecast_lower_gauges = {}
 forecast_upper_gauges = {}
 anomaly_status_gauges = {}  
 actual_value_gauges = {}
+future_forecast_gauges = {}
 
 def load_config():
     global config, PROMETHEUS_URL, METRICS_CONFIG, DATA_CONFIG
@@ -74,6 +75,7 @@ def initialize_metrics():
             forecast_upper_gauges[name] = Gauge(f'prophet_upper_{name}', f'Upper bound')
             anomaly_status_gauges[name] = Gauge(f'prophet_anomaly_status_{name}', f'Anomaly status')
             actual_value_gauges[name] = Gauge(f'prophet_actual_{name}', f'Actual value')
+            future_forecast_gauges[name] = Gauge(f'prophet_future_forecast_{name}', f'Forecast at end of period')
 
 def train_all_models():
     global last_trained
@@ -114,6 +116,8 @@ def metrics():
             forecast_gauges[name].set(forecast.loc[idx, 'yhat'])
             forecast_lower_gauges[name].set(forecast.loc[idx, 'yhat_lower'])
             forecast_upper_gauges[name].set(forecast.loc[idx, 'yhat_upper'])
+            future_val = forecast['yhat'].iloc[-1]
+            future_forecast_gauges[name].set(future_val)
             if name in anomalies and not anomalies[name].empty:
                 df = anomalies[name]
                 act_idx = abs(df['ds'] - now).idxmin()
