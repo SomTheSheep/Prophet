@@ -1,11 +1,8 @@
 import os, yaml, logging, requests
 from datetime import datetime
-from flask import Flask, render_template_string
+from flask import Flask, render_template_string, jsonify
 import pandas as pd
 from prophet import Prophet
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -14,14 +11,13 @@ app = Flask(__name__)
 CONFIG_PATH = os.environ.get('CONFIG_PATH', '/app/config.yaml')
 PROMETHEUS_TOKEN = os.environ.get('PROMETHEUS_TOKEN', '')
 
-# Ensure static folder exists for saving plots
-STATIC_DIR = os.path.join(os.path.dirname(__file__), 'static')
-os.makedirs(STATIC_DIR, exist_ok=True)
-
-metrics_plots = {}
+metrics_data = {}
+forecasts = {}
+anomaly_results = {}
 
 def load_config():
     global config, PROMETHEUS_URL, METRICS_CONFIG
+    logger.info("Loading config")
     with open(CONFIG_PATH, 'r') as f:
         config = yaml.safe_load(f)
     PROMETHEUS_URL = config['prometheus']['url']
@@ -46,36 +42,29 @@ def query_prometheus(query, start_time, end_time, step=300):
         logger.error(f"Prometheus query failed: {e}")
     return pd.DataFrame()
 
-def train_prophet_and_plot(name, df, periods, seasonality):
+def train_prophet_and_store(name, df, periods, seasonality):
     model = Prophet(daily_seasonality=(seasonality == 'daily'), weekly_seasonality=(seasonality == 'weekly'), yearly_seasonality=False, interval_width=0.95)
     model.fit(df)
     future = model.make_future_dataframe(periods=periods, freq='5min')
     forecast = model.predict(future)
     
-    # Generate anomaly plot (historical + bands)
-    fig1 = model.plot(forecast)
-    plt.title(f"{name} - Anomaly Bounds (Historical + Forecast)")
-    anomaly_path = f"anomaly_{name}.png"
-    fig1.savefig(os.path.join(STATIC_DIR, anomaly_path))
-    plt.close(fig1)
+    forecasts[name] = forecast
     
-    forecast_path = None
-    if name not in ['rabbitmq_messages_ready_total', 'rabbitmq_active_consumers']:
-        # Extract future forecast portion
-        future_forecast = forecast[forecast['ds'] > df['ds'].max()]
-        
-        plt.figure(figsize=(10, 6))
-        plt.plot(future_forecast['ds'], future_forecast['yhat'], label='Forecast', color='orange')
-        plt.fill_between(future_forecast['ds'], future_forecast['yhat_lower'], future_forecast['yhat_upper'], color='blue', alpha=0.2)
-        plt.title(f"{name} - Future Forecast")
-        plt.legend()
-        forecast_path = f"forecast_{name}.png"
-        plt.savefig(os.path.join(STATIC_DIR, forecast_path))
-        plt.close()
-        
-    return anomaly_path, forecast_path
+    # Detect anomalies in the historical data
+    merged = df.merge(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']], on='ds', how='left')
+    merged['anomaly'] = (merged['y'] < merged['yhat_lower']) | (merged['y'] > merged['yhat_upper'])
+    
+    # Store anomalies for interactive plotting
+    anomalies = merged[merged['anomaly'] == True]
+    ano_list = []
+    for _, row in anomalies.iterrows():
+        ano_list.append({
+            'timestamp': row['ds'].strftime('%Y-%m-%dT%H:%M:%S'),
+            'actual': row['y']
+        })
+    anomaly_results[name] = ano_list
 
-def generate_all_plots():
+def generate_all_data():
     load_config()
     start_time = "2026-02-16T12:00:00Z"
     end_time = "2026-03-04T05:21:16Z"
@@ -89,45 +78,92 @@ def generate_all_plots():
         logger.info(f"Processing {name}...")
         df = query_prometheus(query, start_time, end_time)
         if not df.empty:
-            anomaly_path, forecast_path = train_prophet_and_plot(name, df, periods, season)
-            metrics_plots[name] = {
-                'anomaly': anomaly_path,
-                'forecast': forecast_path
-            }
+            metrics_data[name] = True
+            train_prophet_and_store(name, df, periods, season)
 
 @app.route('/')
 def index():
     html = """
     <html>
-    <head><title>Prophet Historical Forecasts</title></head>
+    <head><title>Prophet Historical Forecasts</title>
     <style>
         body { font-family: sans-serif; margin: 20px; }
-        .metric-container { margin-bottom: 40px; border-bottom: 1px solid #ccc; padding-bottom: 20px; }
-        img { max-width: 1000px; display: block; margin: 10px 0; }
+        ul { font-size: 18px; }
+        li { margin-bottom: 10px; }
+        a { text-decoration: none; color: #0066cc; font-weight: bold; }
+        a:hover { text-decoration: underline; }
     </style>
+    </head>
     <body>
-        <h1>Prophet Historical Forecasts (Feb 16 - Mar 4)</h1>
-        {% if not plots %}
-            <p>Plots are generating, please refresh in a few minutes...</p>
+        <h1>Prophet Historical Forecasts (Interactive)</h1>
+        {% if not metrics %}
+            <p>Data is currently processing. Please refresh in a minute...</p>
+        {% else %}
+            <p>Select a metric below to view its interactive forecast chart:</p>
+            <ul>
+            {% for name in metrics %}
+                <li><a href="/chart/{{ name }}">{{ name }}</a></li>
+            {% endfor %}
+            </ul>
         {% endif %}
-        {% for name, paths in plots.items() %}
-            <div class="metric-container">
-                <h2>{{ name }}</h2>
-                <h3>Anomaly Detection Plot (Actual vs Allowed Bounds)</h3>
-                <img src="{{ url_for('static', filename=paths['anomaly']) }}" />
-                {% if paths['forecast'] %}
-                    <h3>Future Forecast Plot (Forecast only)</h3>
-                    <img src="{{ url_for('static', filename=paths['forecast']) }}" />
-                {% endif %}
-            </div>
-        {% endfor %}
     </body>
     </html>
     """
-    return render_template_string(html, plots=metrics_plots)
+    return render_template_string(html, metrics=list(metrics_data.keys()))
+
+@app.route('/chart/<metric_name>')
+def chart_metric(metric_name):
+    if metric_name not in forecasts or metric_name not in anomaly_results:
+        return jsonify({'error': 'Metric not found or still processing'}), 404
+
+    forecast = forecasts[metric_name]
+    anomalies = anomaly_results[metric_name]
+
+    timestamps = forecast['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S').tolist()
+    predicted = forecast['yhat'].tolist()
+    lower = forecast['yhat_lower'].tolist()
+    upper = forecast['yhat_upper'].tolist()
+    
+    # JS variables need to be correctly formatted strings
+    anomaly_times = [a['timestamp'] for a in anomalies]
+    anomaly_values = [a['actual'] for a in anomalies]
+    
+    # Create the data list for JS
+    anomaly_data_js = "[" + ",".join([f"{{x: '{t}', y: {v}}}" for t, v in zip(anomaly_times, anomaly_values)]) + "]"
+
+    html = f"""<!DOCTYPE html>
+    <html><head><title>Prophet: {metric_name}</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <style>body{{font-family:Arial;margin:20px}}.stats{{background:#f5f5f5;padding:15px;border-radius:8px;margin-bottom:20px}}</style>
+    </head><body>
+    <h2><a href="/"><- Back to Index</a></h2>
+    <h1>Prophet Forecast: {metric_name}</h1>
+    <div class="stats"><strong>Anomalies Detected:</strong> {len(anomalies)} | <strong>Total Data Points:</strong> {len(forecast)}</div>
+    <canvas id="chart" height="100"></canvas>
+    <script>
+    new Chart(document.getElementById('chart').getContext('2d'), {{
+        type: 'line',
+        data: {{
+            labels: {timestamps},
+            datasets: [
+                {{label:'Predicted',data:{predicted},borderColor:'blue',fill:false,pointRadius:0}},
+                {{label:'Upper',data:{upper},borderColor:'rgba(0,255,0,0.3)',fill:false,pointRadius:0,borderWidth:1}},
+                {{label:'Lower',data:{lower},borderColor:'rgba(0,255,0,0.3)',fill:'-1',backgroundColor:'rgba(0,255,0,0.1)',pointRadius:0,borderWidth:1}},
+                {{label:'Anomalies',data:{anomaly_data_js},borderColor:'red',backgroundColor:'red',pointRadius:4,showLine:false}}
+            ]
+        }},
+        options: {{
+            responsive:true,
+            interaction: {{ mode: 'index', intersect: false }},
+            scales: {{x:{{type:'time',time:{{unit:'day'}}}}}}
+        }}
+    }});
+    </script></body></html>"""
+    return html
 
 if __name__ == '__main__':
-    logger.info("Starting historical data processing...")
-    generate_all_plots()
+    logger.info("Starting historical data processing (no static plots will be generated)...")
+    generate_all_data()
     logger.info("Completed processing. Starting web server...")
     app.run(host='0.0.0.0', port=8000)
