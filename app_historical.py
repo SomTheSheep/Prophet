@@ -3,6 +3,7 @@ from datetime import datetime
 from flask import Flask, render_template_string, jsonify
 import pandas as pd
 from prophet import Prophet
+import threading
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -14,6 +15,7 @@ PROMETHEUS_TOKEN = os.environ.get('PROMETHEUS_TOKEN', '')
 metrics_data = {}
 forecasts = {}
 anomaly_results = {}
+data_loaded = False
 
 def load_config():
     global config, PROMETHEUS_URL, METRICS_CONFIG
@@ -50,11 +52,9 @@ def train_prophet_and_store(name, df, periods, seasonality):
     
     forecasts[name] = forecast
     
-    # Detect anomalies in the historical data
     merged = df.merge(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']], on='ds', how='left')
     merged['anomaly'] = (merged['y'] < merged['yhat_lower']) | (merged['y'] > merged['yhat_upper'])
     
-    # Store anomalies for interactive plotting
     anomalies = merged[merged['anomaly'] == True]
     ano_list = []
     for _, row in anomalies.iterrows():
@@ -65,21 +65,28 @@ def train_prophet_and_store(name, df, periods, seasonality):
     anomaly_results[name] = ano_list
 
 def generate_all_data():
-    load_config()
-    start_time = "2026-02-16T12:00:00Z"
-    end_time = "2026-03-04T05:21:16Z"
-    
-    for m in METRICS_CONFIG:
-        name = m['name']
-        query = m['query']
-        periods = m.get('forecast_periods', 60)
-        season = m.get('seasonality', 'daily')
+    global data_loaded
+    logger.info("Starting background data generation...")
+    try:
+        load_config()
+        start_time = "2026-02-16T12:00:00Z"
+        end_time = "2026-03-04T05:21:16Z"
         
-        logger.info(f"Processing {name}...")
-        df = query_prometheus(query, start_time, end_time)
-        if not df.empty:
-            metrics_data[name] = True
-            train_prophet_and_store(name, df, periods, season)
+        for m in METRICS_CONFIG:
+            name = m['name']
+            query = m['query']
+            periods = m.get('forecast_periods', 60)
+            season = m.get('seasonality', 'daily')
+            
+            logger.info(f"Processing {name}...")
+            df = query_prometheus(query, start_time, end_time)
+            if not df.empty:
+                metrics_data[name] = True
+                train_prophet_and_store(name, df, periods, season)
+        data_loaded = True
+        logger.info("Background data generation complete!")
+    except Exception as e:
+        logger.error(f"Error generating data: {e}")
 
 @app.route('/')
 def index():
@@ -96,8 +103,8 @@ def index():
     </head>
     <body>
         <h1>Prophet Historical Forecasts (Interactive)</h1>
-        {% if not metrics %}
-            <p>Data is currently processing. Please refresh in a minute...</p>
+        {% if not ready %}
+            <p>Data is currently processing. Check pod logs and please refresh in a minute...</p>
         {% else %}
             <p>Select a metric below to view its interactive forecast chart:</p>
             <ul>
@@ -109,7 +116,7 @@ def index():
     </body>
     </html>
     """
-    return render_template_string(html, metrics=list(metrics_data.keys()))
+    return render_template_string(html, ready=data_loaded, metrics=list(metrics_data.keys()))
 
 @app.route('/chart/<metric_name>')
 def chart_metric(metric_name):
@@ -124,11 +131,9 @@ def chart_metric(metric_name):
     lower = forecast['yhat_lower'].tolist()
     upper = forecast['yhat_upper'].tolist()
     
-    # JS variables need to be correctly formatted strings
     anomaly_times = [a['timestamp'] for a in anomalies]
     anomaly_values = [a['actual'] for a in anomalies]
     
-    # Create the data list for JS
     anomaly_data_js = "[" + ",".join([f"{{x: '{t}', y: {v}}}" for t, v in zip(anomaly_times, anomaly_values)]) + "]"
 
     html = f"""<!DOCTYPE html>
@@ -163,7 +168,6 @@ def chart_metric(metric_name):
     return html
 
 if __name__ == '__main__':
-    logger.info("Starting historical data processing (no static plots will be generated)...")
-    generate_all_data()
-    logger.info("Completed processing. Starting web server...")
-    app.run(host='0.0.0.0', port=8000)
+    # Run Generation in background thread so Gunicorn/Flask global states are respected
+    threading.Thread(target=generate_all_data, daemon=True).start()
+    app.run(host='0.0.0.0', port=8000, use_reloader=False)
