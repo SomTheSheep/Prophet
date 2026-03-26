@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: historical-forecaster
+  namespace: sre
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: historical-forecaster
+  template:
+    metadata:
+      labels:
+        app: historical-forecaster
+    spec:
+      containers:
+        - name: historical-forecaster
+          image: sohamsal2026/historical-forecaster:v1
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config.yaml
+              subPath: config.yaml
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "2Gi"
+              cpu: "1"
+      volumes:
+        - name: config-volume
+          configMap:
+            name: historical-forecaster-config
