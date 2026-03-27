@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: historical-forecaster
-          image: sohamsal2026/historical-forecaster:v5
+          image: sohamsal2026/historical-forecaster:v6
           ports:
             - containerPort: 8000
           volumeMounts:
