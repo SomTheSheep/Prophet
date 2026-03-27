@@ -1,4 +1,4 @@
-import os, yaml, logging, requests
+import os, yaml, logging, requests, threading, time
 from datetime import datetime, timedelta
 from flask import Flask, jsonify, Response, request
 import pandas as pd
@@ -91,7 +91,10 @@ def train_all_models():
             anomaly_df = detect_anomalies(df, forecast)
             forecasts[name], anomalies[name] = forecast, anomaly_df
             if name in anomaly_gauges: anomaly_gauges[name].set(anomaly_df['anomaly'].sum())
-            if name in forecast_gauges: forecast_gauges[name].set(forecast['yhat'].iloc[-1])
+            
+            # Note: We remove the static .iloc[-1] set here because metrics() handles dynamic exporting now
+            # if name in forecast_gauges: forecast_gauges[name].set(forecast['yhat'].iloc[-1])
+            
     last_trained = datetime.utcnow().isoformat()
 
 @app.route('/health')
@@ -112,12 +115,20 @@ def metrics():
     now = datetime.utcnow()
     for name, forecast in forecasts.items():
         if not forecast.empty:
+            # Current time evaluation for Anomalies
             idx = abs(forecast['ds'] - now).idxmin()
             forecast_gauges[name].set(forecast.loc[idx, 'yhat'])
             forecast_lower_gauges[name].set(forecast.loc[idx, 'yhat_lower'])
             forecast_upper_gauges[name].set(forecast.loc[idx, 'yhat_upper'])
-            future_val = forecast['yhat'].iloc[-1]
+            
+            # Continuous Walk: Dynamically find the matching target in the future array
+            # We look for what was predicted roughly 5 days from `now`
+            target_future_time = now + timedelta(days=5)
+            # Find the closest pre-calculated future tick
+            future_idx = abs(forecast['ds'] - target_future_time).idxmin()
+            future_val = forecast.loc[future_idx, 'yhat']
             future_forecast_gauges[name].set(future_val)
+            
             if name in anomalies and not anomalies[name].empty:
                 df = anomalies[name]
                 act_idx = abs(df['ds'] - now).idxmin()
@@ -126,7 +137,23 @@ def metrics():
                 anomaly_status_gauges[name].set(1 if (val < forecast.loc[idx, 'yhat_lower'] or val > forecast.loc[idx, 'yhat_upper']) else 0)
     return Response(generate_latest(REGISTRY), mimetype=CONTENT_TYPE_LATEST)
 
+def background_retrain_loop(interval_hours=6):
+    while True:
+        # Sleep exactly N hours before attempting a background retrain
+        time.sleep(interval_hours * 3600)
+        try:
+            logger.info("Executing periodic background retraining of Prophet models...")
+            train_all_models()
+            logger.info("Periodic background retraining complete.")
+        except Exception as e:
+            logger.error(f"Periodic background retraining failed: {e}")
+
 if __name__ == '__main__':
     initialize_metrics()
+    logger.info("Running initial Prophet model training phase...")
     train_all_models()
+    
+    # Spin up background loop for rolling 6-hour updates
+    threading.Thread(target=background_retrain_loop, args=(6,), daemon=True).start()
+    
     app.run(host='0.0.0.0', port=8000)
