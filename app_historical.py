@@ -87,14 +87,6 @@ def index():
                 </ul>
             </div>
             <div class="column">
-                <h2>Future Forecasting</h2>
-                <ul>
-                {% for name in forecast_metrics %}
-                    <li><a href="/chart/forecast/{{ name }}">{{ name }}</a></li>
-                {% endfor %}
-                </ul>
-            </div>
-            <div class="column">
                 <h2>Continuous T+5 Forecast</h2>
                 <ul>
                 {% for name in forecast_metrics %}
@@ -110,7 +102,7 @@ def index():
 
 @app.route('/chart/<chart_type>/<metric_name>')
 def chart_metric(chart_type, metric_name):
-    if chart_type not in ['anomaly', 'forecast', 'simulate']:
+    if chart_type not in ['anomaly', 'simulate']:
         return "Invalid chart type", 400
 
     try:
@@ -194,36 +186,6 @@ def chart_metric(chart_type, metric_name):
             {{label:'Predicted (Shifted T+5 Days)', data:[{",".join(map(str, predicted_mapped))}], borderColor:'blue', borderWidth:2, fill:false, pointRadius:0}},
             {{label:'Upper Bound', data:[{",".join(map(str, upper_mapped))}], borderColor:'rgba(0,255,0,0.3)', fill:false, pointRadius:0, borderWidth:1}},
             {{label:'Lower Bound', data:[{",".join(map(str, lower_mapped))}], borderColor:'rgba(0,255,0,0.3)', fill:'-1', backgroundColor:'rgba(0,255,0,0.1)', pointRadius:0, borderWidth:1}}
-        """
-
-    else:
-        # Split into historical and future sections
-        historical = forecast[forecast['ds'] <= max_actual_date]
-        future = forecast[forecast['ds'] > max_actual_date]
-        
-        # Combine timestamps strictly ordered
-        timestamps = forecast['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S').tolist()
-        
-        # Actuals only exist up to the max date
-        actuals_dict = dict(zip(actuals_df['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S'), actuals_df['y']))
-        actuals_mapped = [actuals_dict.get(t, "null") for t in timestamps]
-        
-        # Future predictions start overlapping here
-        future_pred_dict = dict(zip(future['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S'), future['yhat']))
-        future_predicted_mapped = [future_pred_dict.get(t, "null") for t in timestamps]
-        
-        # Include future bounds
-        future_upper_dict = dict(zip(future['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S'), future['yhat_upper']))
-        future_upper_mapped = [future_upper_dict.get(t, "null") for t in timestamps]
-        
-        future_lower_dict = dict(zip(future['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S'), future['yhat_lower']))
-        future_lower_mapped = [future_lower_dict.get(t, "null") for t in timestamps]
-
-        datasets_js = f"""
-            {{label:'Historical Actuals', data:[{",".join(map(str, actuals_mapped))}], borderColor:'black', borderWidth:1, fill:false, pointRadius:0}},
-            {{label:'Future Predicted', data:[{",".join(map(str, future_predicted_mapped))}], borderColor:'blue', borderWidth:2, fill:false, pointRadius:0}},
-            {{label:'Future Upper Bound', data:[{",".join(map(str, future_upper_mapped))}], borderColor:'rgba(0,255,0,0.3)', fill:false, pointRadius:0, borderWidth:1}},
-            {{label:'Future Lower Bound', data:[{",".join(map(str, future_lower_mapped))}], borderColor:'rgba(0,255,0,0.3)', fill:'-1', backgroundColor:'rgba(0,255,0,0.1)', pointRadius:0, borderWidth:1}}
         """
 
     html = f"""<!DOCTYPE html>
