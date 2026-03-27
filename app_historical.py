@@ -48,7 +48,7 @@ def train_prophet_model(df, periods, seasonality):
     anomalies = merged[merged['anomaly'] == True]
     ano_list = [{ 'timestamp': row['ds'].strftime('%Y-%m-%dT%H:%M:%S'), 'actual': row['y'] } for _, row in anomalies.iterrows()]
     
-    return forecast, ano_list
+    return forecast, ano_list, df
 
 @app.route('/')
 def index():
@@ -58,33 +58,53 @@ def index():
     except Exception as e:
         return f"Error loading config: {e}", 500
 
+    excluded_forecast_metrics = ['rabbitmq_messages_ready_total', 'rabbitmq_active_consumers']
+    forecast_metrics = [m for m in metric_names if m not in excluded_forecast_metrics]
+
     html = """
     <html>
     <head><title>Prophet Historical Forecasts</title>
     <style>
         body { font-family: sans-serif; margin: 20px; }
-        ul { font-size: 18px; }
-        li { margin-bottom: 10px; }
+        .container { display: flex; gap: 50px; }
+        .column { flex: 1; }
+        ul { font-size: 16px; }
+        li { margin-bottom: 8px; }
         a { text-decoration: none; color: #0066cc; font-weight: bold; }
         a:hover { text-decoration: underline; }
     </style>
     </head>
     <body>
         <h1>Prophet Historical Forecasts (Interactive)</h1>
-        <p>Select a metric below to compute and view its interactive forecast chart:</p>
-        <ul>
-        {% for name in metrics %}
-            <li><a href="/chart/{{ name }}">{{ name }}</a></li>
-        {% endfor %}
-        </ul>
-        <p><small>Note: Models are generated on-demand. Loading a chart may take a few moments.</small></p>
+        <p><small>Note: Models are generated on-demand. Loading a chart may take a few moments (usually ~5-15 seconds).</small></p>
+        <div class="container">
+            <div class="column">
+                <h2>Anomaly Detection (Historical)</h2>
+                <ul>
+                {% for name in metric_names %}
+                    <li><a href="/chart/anomaly/{{ name }}">{{ name }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Future Forecasting</h2>
+                <ul>
+                {% for name in forecast_metrics %}
+                    <li><a href="/chart/forecast/{{ name }}">{{ name }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
     </body>
     </html>
     """
-    return render_template_string(html, metrics=metric_names)
+    return render_template_string(html, metric_names=metric_names, forecast_metrics=forecast_metrics)
 
-@app.route('/chart/<metric_name>')
-def chart_metric(metric_name):
+@app.route('/chart/<chart_type>/<metric_name>')
+def chart_metric(chart_type, metric_name):
+    if chart_type not in ['anomaly', 'forecast']:
+        return "Invalid chart type", 400
+
     try:
         url, metrics_config = load_config()
     except Exception as e:
@@ -99,34 +119,84 @@ def chart_metric(metric_name):
     start_time = "2026-02-16T12:00:00Z"
     end_time = "2026-03-04T05:21:16Z"
     
-    logger.info(f"Dynamically querying and generating model for {metric_name}...")
+    logger.info(f"Dynamically querying and generating model for {metric_name} ({chart_type})...")
     
     df = query_prometheus(url, m_config['query'], start_time, end_time)
     
     if df.empty:
          return f"<h1>Error</h1><p>No Prometheus data returned for metric <b>{metric_name}</b> between {start_time} and {end_time}.</p><a href='/'>Back</a>", 404
 
-    forecast, anomalies = train_prophet_model(df, m_config.get('forecast_periods', 60), m_config.get('seasonality', 'daily'))
+    forecast, anomalies, actuals_df = train_prophet_model(df, m_config.get('forecast_periods', 60), m_config.get('seasonality', 'daily'))
+    max_actual_date = actuals_df['ds'].max()
     
-    timestamps = forecast['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S').tolist()
-    predicted = forecast['yhat'].tolist()
-    lower = forecast['yhat_lower'].tolist()
-    upper = forecast['yhat_upper'].tolist()
-    
-    anomaly_times = [a['timestamp'] for a in anomalies]
-    anomaly_values = [a['actual'] for a in anomalies]
-    
-    anomaly_data_js = "[" + ",".join([f"{{x: '{t}', y: {v}}}" for t, v in zip(anomaly_times, anomaly_values)]) + "]"
+    if chart_type == 'anomaly':
+        # Filter strictly up to the max historical date
+        forecast = forecast[forecast['ds'] <= max_actual_date]
+        
+        timestamps = forecast['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S').tolist()
+        predicted = forecast['yhat'].tolist()
+        lower = forecast['yhat_lower'].tolist()
+        upper = forecast['yhat_upper'].tolist()
+        
+        # We need actual values for the labels
+        actuals_dict = dict(zip(actuals_df['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S'), actuals_df['y']))
+        actuals_mapped = [actuals_dict.get(t, "null") for t in timestamps]
+        
+        anomaly_times = [a['timestamp'] for a in anomalies]
+        anomaly_values = [a['actual'] for a in anomalies]
+        anomaly_data_js = "[" + ",".join([f"{{x: '{t}', y: {v}}}" for t, v in zip(anomaly_times, anomaly_values)]) + "]"
+
+        datasets_js = f"""
+            {{label:'Actuals', data:[{",".join(map(str, actuals_mapped))}], borderColor:'black', borderWidth:1, fill:false, pointRadius:0}},
+            {{label:'Predicted', data:{predicted}, borderColor:'blue', borderWidth:2, fill:false, pointRadius:0}},
+            {{label:'Upper', data:{upper}, borderColor:'rgba(0,255,0,0.3)', fill:false, pointRadius:0, borderWidth:1}},
+            {{label:'Lower', data:{lower}, borderColor:'rgba(0,255,0,0.3)', fill:'-1', backgroundColor:'rgba(0,255,0,0.1)', pointRadius:0, borderWidth:1}},
+            {{label:'Anomalies', data:{anomaly_data_js}, borderColor:'red', backgroundColor:'red', pointRadius:4, showLine:false}}
+        """
+
+    else:
+        # Split into historical and future sections
+        historical = forecast[forecast['ds'] <= max_actual_date]
+        future = forecast[forecast['ds'] > max_actual_date]
+        
+        # Combine timestamps strictly ordered
+        timestamps = forecast['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S').tolist()
+        
+        # Actuals only exist up to the max date
+        actuals_dict = dict(zip(actuals_df['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S'), actuals_df['y']))
+        actuals_mapped = [actuals_dict.get(t, "null") for t in timestamps]
+        
+        # Future predictions start overlapping here
+        future_pred_dict = dict(zip(future['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S'), future['yhat']))
+        future_predicted_mapped = [future_pred_dict.get(t, "null") for t in timestamps]
+        
+        # Include future bounds
+        future_upper_dict = dict(zip(future['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S'), future['yhat_upper']))
+        future_upper_mapped = [future_upper_dict.get(t, "null") for t in timestamps]
+        
+        future_lower_dict = dict(zip(future['ds'].dt.strftime('%Y-%m-%dT%H:%M:%S'), future['yhat_lower']))
+        future_lower_mapped = [future_lower_dict.get(t, "null") for t in timestamps]
+
+        datasets_js = f"""
+            {{label:'Historical Actuals', data:[{",".join(map(str, actuals_mapped))}], borderColor:'black', borderWidth:1, fill:false, pointRadius:0}},
+            {{label:'Future Predicted', data:[{",".join(map(str, future_predicted_mapped))}], borderColor:'blue', borderWidth:2, fill:false, pointRadius:0}},
+            {{label:'Future Upper Bound', data:[{",".join(map(str, future_upper_mapped))}], borderColor:'rgba(0,255,0,0.3)', fill:false, pointRadius:0, borderWidth:1}},
+            {{label:'Future Lower Bound', data:[{",".join(map(str, future_lower_mapped))}], borderColor:'rgba(0,255,0,0.3)', fill:'-1', backgroundColor:'rgba(0,255,0,0.1)', pointRadius:0, borderWidth:1}}
+        """
 
     html = f"""<!DOCTYPE html>
-    <html><head><title>Prophet: {metric_name}</title>
+    <html><head><title>Prophet {chart_type.title()}: {metric_name}</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
     <style>body{{font-family:Arial;margin:20px}}.stats{{background:#f5f5f5;padding:15px;border-radius:8px;margin-bottom:20px}}</style>
     </head><body>
     <h2><a href="/"><- Back to Index</a></h2>
-    <h1>Prophet Forecast: {metric_name}</h1>
-    <div class="stats"><strong>Anomalies Detected:</strong> {len(anomalies)} | <strong>Total Data Points:</strong> {len(forecast)}</div>
+    <h1>Prophet {chart_type.title()}: {metric_name}</h1>
+    <div class="stats">
+        <strong>Chart Mode:</strong> {chart_type.title()} | 
+        <strong>Total Data Points:</strong> {len(timestamps)} | 
+        <strong>Forecast Bound:</strong> {m_config.get('forecast_periods', 60) * 5} minutes
+    </div>
     <canvas id="chart" height="100"></canvas>
     <script>
     new Chart(document.getElementById('chart').getContext('2d'), {{
@@ -134,14 +204,12 @@ def chart_metric(metric_name):
         data: {{
             labels: {timestamps},
             datasets: [
-                {{label:'Predicted',data:{predicted},borderColor:'blue',fill:false,pointRadius:0}},
-                {{label:'Upper',data:{upper},borderColor:'rgba(0,255,0,0.3)',fill:false,pointRadius:0,borderWidth:1}},
-                {{label:'Lower',data:{lower},borderColor:'rgba(0,255,0,0.3)',fill:'-1',backgroundColor:'rgba(0,255,0,0.1)',pointRadius:0,borderWidth:1}},
-                {{label:'Anomalies',data:{anomaly_data_js},borderColor:'red',backgroundColor:'red',pointRadius:4,showLine:false}}
+                {datasets_js}
             ]
         }},
         options: {{
             responsive:true,
+            spanGaps: true,
             interaction: {{ mode: 'index', intersect: false }},
             scales: {{x:{{type:'time',time:{{unit:'day'}}}}}}
         }}
