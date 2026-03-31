@@ -1,37 +1,42 @@
 from flask import Flask, jsonify, render_template_string
-import requests
-import urllib.parse
+import os, yaml, logging, requests
 import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
+from flask import Flask, jsonify, render_template_string
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
-PROM_URL = "https://prometheus.sitopflab03.otv-staging.com"
-PROM_TOKEN = "your_token_here" # User should replace this
-METRIC_QUERY = "histogram_quantile(0.90, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/ias/v1/contentlicenses/widevine'}[10m])) by (le))"
+CONFIG_PATH = os.environ.get('CONFIG_PATH', '/app/config.yaml')
+PROMETHEUS_TOKEN = os.environ.get('PROMETHEUS_TOKEN', '')
 
-def query_prometheus(start_time, end_time):
-    headers = {'Authorization': f'Bearer {PROM_TOKEN}'}
-    url = f"{PROM_URL}/api/v1/query_range"
-    params = {
-        'query': METRIC_QUERY,
-        'start': start_time.isoformat() + "Z",
-        'end': end_time.isoformat() + "Z",
-        'step': '15m'
-    }
-    
-    response = requests.get(url, headers=headers, params=params, verify=False)
-    data = response.json()
-    
-    if data['status'] == 'success' and len(data['data']['result']) > 0:
-        values = data['data']['result'][0]['values']
-        df = pd.DataFrame(values, columns=['timestamp', 'y'])
-        df['timestamp'] = pd.to_datetime(df['timestamp'], unit='s')
-        df['y'] = df['y'].astype(float)
-        # handle nan
-        df['y'] = df['y'].fillna(method='ffill').fillna(0)
-        return df
+def load_config():
+    logger.info("Loading config")
+    with open(CONFIG_PATH, 'r') as f:
+        config = yaml.safe_load(f)
+    return config['prometheus']['url'], config['metrics']
+
+def get_prometheus_headers():
+    headers = {'Accept': 'application/json'}
+    if PROMETHEUS_TOKEN: headers['Authorization'] = f"Bearer {PROMETHEUS_TOKEN}" if not PROMETHEUS_TOKEN.startswith('Bearer ') else PROMETHEUS_TOKEN
+    return headers
+
+def query_prometheus(url, query, start_time, end_time, step='15m'):
+    query_url = f"{url}/api/v1/query_range"
+    params = {'query': query, 'start': start_time, 'end': end_time, 'step': step}
+    try:
+        response = requests.get(query_url, params=params, headers=get_prometheus_headers(), verify=False, timeout=120)
+        data = response.json()
+        if data.get('status') == 'success' and len(data.get('data', {}).get('result', [])) > 0:
+            df = pd.DataFrame(data['data']['result'][0]['values'], columns=['timestamp', 'y'])
+            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='s')
+            df['y'] = pd.to_numeric(df['y'], errors='coerce')
+            df['y'] = df['y'].ffill().fillna(0) # Handle NaN
+            return df
+    except Exception as e:
+        logger.error(f"Prometheus query failed: {e}")
     return pd.DataFrame()
 
 def apply_fourier_transform(df, num_harmonics=10, forecast_points=480):
@@ -86,88 +91,54 @@ def apply_fourier_transform(df, num_harmonics=10, forecast_points=480):
     
     return fitted_y, forecast_y, std_dev
 
-HTML_TEMPLATE = """
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Fourier Anomaly Forecast</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <div style="width: 80%; margin: auto;">
-        <canvas id="fourierChart"></canvas>
-    </div>
-    <script>
-        fetch('/api/data')
-            .then(res => res.json())
-            .then(data => {
-                const ctx = document.getElementById('fourierChart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: data.labels,
-                        datasets: [
-                            {
-                                label: 'Actual Data',
-                                data: data.actual,
-                                borderColor: 'blue',
-                                fill: false,
-                                pointRadius: 0
-                            },
-                            {
-                                label: 'Fitted/Forecast (yhat)',
-                                data: data.yhat,
-                                borderColor: 'red',
-                                borderDash: [5, 5],
-                                fill: false,
-                                pointRadius: 0
-                            },
-                            {
-                                label: 'Upper Bound',
-                                data: data.yhat_upper,
-                                borderColor: 'rgba(255, 99, 132, 0.2)',
-                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                                fill: '+1',
-                                pointRadius: 0
-                            },
-                            {
-                                label: 'Lower Bound',
-                                data: data.yhat_lower,
-                                borderColor: 'rgba(255, 99, 132, 0.2)',
-                                fill: false,
-                                pointRadius: 0
-                            }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        interaction: {
-                            mode: 'index',
-                            intersect: false,
-                        },
-                        scales: {
-                            x: {
-                                type: 'category'
-                            }
-                        }
-                    }
-                });
-            });
-    </script>
-</body>
-</html>
-"""
-
 @app.route('/')
 def index():
-    return render_template_string(HTML_TEMPLATE)
+    try:
+        _, metrics_config = load_config()
+        metric_names = [m['name'] for m in metrics_config]
+    except Exception as e:
+        return f"Error loading config: {e}", 500
 
-@app.route('/api/data')
-def get_data():
-    start_time = datetime(2026, 2, 16, 12, 0, 0)
-    end_time = datetime(2026, 3, 4, 5, 21, 16)
+    html = """
+    <html>
+    <head><title>Fourier Historical Forecasts</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        ul { font-size: 16px; }
+        li { margin-bottom: 8px; }
+        a { text-decoration: none; color: #cc0066; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+    </style>
+    </head>
+    <body>
+        <h1>Fourier Fast-Transform Historical Forecasts</h1>
+        <p><small>Note: Using identical configuration format as Prophet</small></p>
+        <h2>Metrics Library</h2>
+        <ul>
+        {% for name in metric_names %}
+            <li><a href="/chart/{{ name }}">{{ name }}</a></li>
+        {% endfor %}
+        </ul>
+    </body>
+    </html>
+    """
+    return render_template_string(html, metric_names=metric_names)
+
+@app.route('/api/data/<metric_name>')
+def get_data(metric_name):
+    try:
+        url, metrics_config = load_config()
+    except Exception as e:
+        return jsonify({'error': f'Config error: {e}'}), 500
+
+    m_config = next((m for m in metrics_config if m['name'] == metric_name), None)
+    if not m_config:
+        return jsonify({'error': 'Metric not found in config'}), 404
+
+    start_time = "2026-02-16T12:00:00Z"
+    end_time = "2026-03-04T05:21:16Z"
     
-    df = query_prometheus(start_time, end_time)
+    df = query_prometheus(url, m_config['query'], start_time, end_time, step='15m')
     
     if df.empty:
         return jsonify({'error': 'No data retrieved'})
@@ -182,12 +153,100 @@ def get_data():
     actual_vals = df['y'].tolist() + [None] * forecast_points
     
     return jsonify({
-        'labels': [t.strftime('%Y-%m-%d %H:%M:%S') for t in all_timestamps],
+        'labels': [t.strftime('%Y-%m-%dT%H:%M:%S') for t in all_timestamps],
         'actual': actual_vals,
         'yhat': forecast_y.tolist(),
         'yhat_upper': (forecast_y + 3 * std_dev).tolist(),
         'yhat_lower': (forecast_y - 3 * std_dev).tolist(),
     })
 
+
+@app.route('/chart/<metric_name>')
+def chart_metric(metric_name):
+    HTML_TEMPLATE = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Fourier Forecast: {{ metric_name }}</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    </head>
+    <body style="font-family: Arial;">
+        <h2><a href="/" style="text-decoration:none;"><- Back to Index</a></h2>
+        <h1>Fourier Forecast: {{ metric_name }}</h1>
+        <div style="width: 90%; margin: auto;">
+            <canvas id="fourierChart"></canvas>
+        </div>
+        <script>
+            fetch('/api/data/{{ metric_name }}')
+                .then(res => res.json())
+                .then(data => {
+                    if(data.error) {
+                        alert(data.error);
+                        return;
+                    }
+                    const ctx = document.getElementById('fourierChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: data.labels,
+                            datasets: [
+                                {
+                                    label: 'Actual Data',
+                                    data: data.actual,
+                                    borderColor: 'black',
+                                    fill: false,
+                                    pointRadius: 0,
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Fitted/Forecast (yhat)',
+                                    data: data.yhat,
+                                    borderColor: 'blue',
+                                    borderDash: [5, 5],
+                                    fill: false,
+                                    pointRadius: 0,
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: 'Upper Bound',
+                                    data: data.yhat_upper,
+                                    borderColor: 'rgba(0, 255, 0, 0.3)',
+                                    fill: false,
+                                    pointRadius: 0,
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Lower Bound',
+                                    data: data.yhat_lower,
+                                    borderColor: 'rgba(0, 255, 0, 0.3)',
+                                    fill: '-1',
+                                    backgroundColor: 'rgba(0, 255, 0, 0.1)',
+                                    pointRadius: 0,
+                                    borderWidth: 1
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            interaction: {
+                                mode: 'index',
+                                intersect: false,
+                            },
+                            scales: {
+                                x: {
+                                    type: 'time',
+                                    time: { unit: 'day' }
+                                }
+                            }
+                        }
+                    });
+                });
+        </script>
+    </body>
+    </html>
+    """
+    return render_template_string(HTML_TEMPLATE, metric_name=metric_name)
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8001)
+    app.run(host='0.0.0.0', port=8001, use_reloader=False)
