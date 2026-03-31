@@ -9,8 +9,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
-CONFIG_PATH = os.environ.get('CONFIG_PATH', '/app/config.yaml')
-PROMETHEUS_TOKEN = os.environ.get('PROMETHEUS_TOKEN', '')
+CONFIG_PATH = os.environ.get('CONFIG_PATH', 'config.yaml') # Defaults to local config.yaml
+PROMETHEUS_TOKEN = "your_token_here" # Paste your actual token here
 
 def load_config():
     logger.info("Loading config")
