@@ -40,8 +40,6 @@ spec:
               value: "15" # Default recommended interval
             - name: APP_FILE
               value: "app.py"
-            - name: FLT_DATA_START_TIME
-              value: "3d"
             - name: FLT_ROLLING_TRAINING_WINDOW_SIZE
               value: "15d"
           resources:
