@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: prometheus-anomaly-detector
-          image: quay.io/aicoe/prometheus-anomaly-detector:latest
+          image: sohamsal2026/fourier-historical:v1
           ports:
             - containerPort: 8080
               name: metrics
@@ -36,12 +36,6 @@ spec:
               value: "2026-02-16T12:00:00Z"
             - name: FLT_DATA_END_TIME
               value: "2026-03-04T05:21:16Z"
-            - name: FLT_RETRAINING_INTERVAL_MINUTES
-              value: "15" # Default recommended interval
-            - name: APP_FILE
-              value: "app.py"
-            - name: FLT_ROLLING_TRAINING_WINDOW_SIZE
-              value: "15d"
           resources:
             requests:
               memory: "512Mi"
