@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: fourier-anomaly-detector-monitor
+  namespace: sre
+  labels:
+    app: fourier-anomaly-detector
+spec:
+  selector:
+    matchLabels:
+      app: fourier-anomaly-detector
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 1m  # Scrape every 1 minute
+      scrapeTimeout: 30s

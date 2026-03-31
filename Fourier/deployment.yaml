@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fourier-anomaly-detector
+  namespace: sre
+  labels:
+    app: fourier-anomaly-detector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fourier-anomaly-detector
+  template:
+    metadata:
+      labels:
+        app: fourier-anomaly-detector
+    spec:
+      containers:
+        - name: prometheus-anomaly-detector
+          image: quay.io/aicoe/prometheus-anomaly-detector:latest
+          ports:
+            - containerPort: 8080
+              name: metrics
+          env:
+            - name: FLT_PROM_URL
+              # Update this to exactly match your Prometheus cluster URL address
+              value: "https://prometheus.sitopflab03.otv-staging.com" 
+            - name: FLT_PROM_ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: prometheus-auth
+                  key: token
+            - name: FLT_METRICS_LIST
+              value: "histogram_quantile(0.90, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/ias/v1/contentlicenses/widevine'}[10m])) by (le))" # Left empty for now as requested
+            - name: FLT_RETRAINING_INTERVAL_MINUTES
+              value: "15" # Default recommended interval
+            - name: APP_FILE
+              value: "app.py"
+            - name: FLT_DATA_START_TIME
+              value: "3d"
+            - name: FLT_ROLLING_TRAINING_WINDOW_SIZE
+              value: "15d"
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
