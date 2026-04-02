@@ -30,8 +30,14 @@ spec:
                 secretKeyRef:
                   name: prometheus-auth
                   key: token
-            - name: FLT_METRICS_LIST
-              value: "histogram_quantile(0.90, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/ias/v1/contentlicenses/widevine'}[10m])) by (le))" # Left empty for now as requested
+            - name: FLT_TARGET_QUERY
+              value: "histogram_quantile(0.90, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/ias/v1/contentlicenses/widevine'}[10m])) by (le))"
+            - name: FLT_REGRESSOR_CPU
+              value: "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'ias-.*', container!='POD'}[10m]))"
+            - name: FLT_REGRESSOR_RPS
+              value: "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse',request_url='/ias/v1/contentlicenses/widevine'}[10m]))"
+            - name: FLT_REGRESSOR_5XX
+              value: "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse', response_code=~'5.*', request_url='/ias/v1/contentlicenses/widevine'}[10m]))"
             - name: FLT_DATA_START_TIME
               value: "2026-02-16T12:00:00Z"
             - name: FLT_DATA_END_TIME
