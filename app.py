@@ -75,7 +75,7 @@ def initialize_metrics():
             forecast_upper_gauges[name] = Gauge(f'prophet_upper_{name}', f'Upper bound')
             anomaly_status_gauges[name] = Gauge(f'prophet_anomaly_status_{name}', f'Anomaly status')
             actual_value_gauges[name] = Gauge(f'prophet_actual_{name}', f'Actual value')
-            future_forecast_gauges[name] = Gauge(f'prophet_future_forecast_{name}', f'Forecast at end of period')
+            future_forecast_gauges[name] = Gauge(f'prophet_future_forecast_{name}', f'Forecast at end of period', ['horizon'])
 
 def train_all_models():
     global last_trained
@@ -84,10 +84,11 @@ def train_all_models():
     start = end - timedelta(days=lookback)
     
     for m in METRICS_CONFIG:
-        name, query, periods, season = m['name'], m['query'], m.get('forecast_periods', 60), m.get('seasonality', 'daily')
+        name, query, base_periods, season = m['name'], m['query'], m.get('forecast_periods', 1440), m.get('seasonality', 'daily')
+        buffered_periods = base_periods + 72 # Add 6-hour buffer (72 * 5min ticks) to prevent flatline between retrains
         df = query_prometheus(query, start.strftime('%Y-%m-%dT%H:%M:%SZ'), end.strftime('%Y-%m-%dT%H:%M:%SZ'))
         if not df.empty:
-            forecast = train_prophet(df, periods, season)
+            forecast = train_prophet(df, buffered_periods, season)
             anomaly_df = detect_anomalies(df, forecast)
             forecasts[name], anomalies[name] = forecast, anomaly_df
             if name in anomaly_gauges: anomaly_gauges[name].set(anomaly_df['anomaly'].sum())
@@ -127,7 +128,7 @@ def metrics():
             # Find the closest pre-calculated future tick
             future_idx = abs(forecast['ds'] - target_future_time).idxmin()
             future_val = forecast.loc[future_idx, 'yhat']
-            future_forecast_gauges[name].set(future_val)
+            future_forecast_gauges[name].labels(horizon='5d').set(future_val)
             
             if name in anomalies and not anomalies[name].empty:
                 df = anomalies[name]
