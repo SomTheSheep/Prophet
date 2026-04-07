@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fourier-endpoints-config
+  namespace: sre
+data:
+  endpoints.json: |
+    {
+      "widevine": {
+        "TARGET_QUERY": "histogram_quantile(0.90, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/ias/v1/contentlicenses/widevine'}[10m])) by (le))",
+        "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'ias-.*', container!='POD'}[10m]))",
+        "REGRESSOR_RPS": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse',request_url='/ias/v1/contentlicenses/widevine'}[10m]))",
+        "REGRESSOR_5XX": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse', response_code=~'5.*', request_url='/ias/v1/contentlicenses/widevine'}[10m]))"
+      },
+      "/ias/v2": {
+        "TARGET_QUERY": "histogram_quantile(0.90, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/ias/v2'}[10m])) by (le))",
+        "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'ias-.*', container!='POD'}[10m]))",
+        "REGRESSOR_RPS": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse',request_url='/ias/v2'}[10m]))",
+        "REGRESSOR_5XX": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse', response_code=~'5.*', request_url='/ias/v2'}[10m]))"
+      },
+      "/cdvr/v2": {
+        "TARGET_QUERY": "histogram_quantile(0.90, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/cdvr/v2'}[10m])) by (le))",
+        "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'user-recordings-.*', container!='POD'}[10m]))",
+        "REGRESSOR_RPS": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse',request_url='/cdvr/v2'}[10m]))",
+        "REGRESSOR_5XX": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse', response_code=~'5.*', request_url='/cdvr/v2'}[10m]))"
+      },
+      "/odm": {
+        "TARGET_QUERY": "histogram_quantile(0.90, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/odm'}[10m])) by (le))",
+        "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'odm-.*', container!='POD'}[10m]))",
+        "REGRESSOR_RPS": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse',request_url='/odm'}[10m]))",
+        "REGRESSOR_5XX": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse', response_code=~'5.*', request_url='/odm'}[10m]))"
+      }
+    }
