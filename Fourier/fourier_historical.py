@@ -81,10 +81,17 @@ def apply_prophet_multivariate(df_target, df_cpu, df_rps, df_5xx, forecast_point
 
     future = m.make_future_dataframe(periods=forecast_points, freq='10min')
     
-    # Forward-fill regressors
-    if 'cpu' in df_merged.columns: future['cpu'] = df_merged['cpu'].iloc[-1]
-    if 'rps' in df_merged.columns: future['rps'] = df_merged['rps'].iloc[-1]
-    if 'err5xx' in df_merged.columns: future['err5xx'] = df_merged['err5xx'].iloc[-1]
+    # Merge the historical fluctuating data into the future dataframe
+    cols_to_merge = ['ds']
+    if 'cpu' in df_merged.columns: cols_to_merge.append('cpu')
+    if 'rps' in df_merged.columns: cols_to_merge.append('rps')
+    if 'err5xx' in df_merged.columns: cols_to_merge.append('err5xx')
+        
+    if len(cols_to_merge) > 1:
+        future = pd.merge(future, df_merged[cols_to_merge], on='ds', how='left')
+        
+    # Forward-fill only the newly created empty future rows
+    future = future.ffill()
 
     forecast = m.predict(future)
     return df_merged, forecast, m
