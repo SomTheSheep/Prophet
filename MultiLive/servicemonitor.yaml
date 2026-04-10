@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: multilive-monitor
+  labels:
+    release: prometheus-operator # adjust depending on your prometheus stack configuration
+spec:
+  selector:
+    matchLabels:
+      app: multilive
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 1m
+      scrapeTimeout: 30s

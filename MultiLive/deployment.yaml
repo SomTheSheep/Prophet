@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multilive-anomaly-detector
+  namespace: sre
+  labels:
+    app: multilive-anomaly-detector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multilive-anomaly-detector
+  template:
+    metadata:
+      labels:
+        app: multilive-anomaly-detector
+    spec:
+      containers:
+        - name: multilive-anomaly-detector
+          image: sohamsal2026/multilive-detector:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              name: metrics
+          env:
+            - name: FLT_PROM_URL
+              value: "https://prometheus.sitopflab03.otv-staging.com" 
+            - name: FLT_PROM_ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: prometheus-auth
+                  key: token
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/multilive
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+      volumes:
+        - name: config-volume
+          configMap:
+            name: multilive-endpoints-config
