@@ -3,7 +3,7 @@ kind: ServiceMonitor
 metadata:
   name: multilive-monitor
   labels:
-    release: prometheus-operator # adjust depending on your prometheus stack configuration
+    release: prometheus-operator
 spec:
   selector:
     matchLabels:
