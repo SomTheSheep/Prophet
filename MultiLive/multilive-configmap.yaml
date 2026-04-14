@@ -6,11 +6,11 @@ metadata:
 data:
   endpoints.json: |
     {
-      "crm": {
+      "/crm_gateway/v1/accounts": {
         "TARGET_QUERY": "histogram_quantile(0.50, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/crm_gateway/v1/accounts'}[10m])) by (le))",
         "REGRESSOR_RPS": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse',request_url='/crm_gateway/v1/accounts'}[10m]))"
       },
-      "metadata": {
+      "/metadata/delivery/GLOBAL/btv/services": {
         "TARGET_QUERY": "histogram_quantile(0.50, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/metadata/delivery/GLOBAL/btv/services'}[10m])) by (le))",
         "REGRESSOR_RPS": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse',request_url='/metadata/delivery/GLOBAL/btv/services'}[10m]))"
       }
