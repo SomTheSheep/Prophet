@@ -26,7 +26,7 @@ else:
     ENDPOINTS_CONFIG = {
         "widevine": {
             "TARGET_QUERY": "histogram_quantile(0.50, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/ias/v1/contentlicenses/widevine'}[10m])) by (le))",
-            "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'ias-.*', container!='POD'}[10m]))"
+            "REGRESSOR_5XX": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse', response_code=~'5.*', request_url='/ias/v1/contentlicenses/widevine'}[10m]))"
         }
     }
 
@@ -119,7 +119,7 @@ HTML_TEMPLATE = """
 
     <div class="config-box">
         <p><strong>Target:</strong> P50 Latency</p>
-        <p><strong>Visibility:</strong> Plotting the mathematical impact (+/- milliseconds) of CPU onto the latency baseline.</p>
+        <p><strong>Visibility:</strong> Plotting the mathematical impact (+/- milliseconds) of 5xx Errors onto the latency baseline.</p>
         <p><strong>Forecast:</strong> 6 Hours forward</p>
     </div>
     
@@ -157,7 +157,7 @@ HTML_TEMPLATE = """
                                 { label: 'Lower Bound', data: data.yhat_lower, borderColor: 'rgba(255, 99, 132, 0.5)', fill: '-1', backgroundColor: 'rgba(255, 99, 132, 0.2)', pointRadius: 0, borderWidth: 1 },
                                 
                                 // Regressor Impact plotted natively in milliseconds on the same Y-Axis
-                                { label: 'CPU Latency Impact', data: data.impact_cpu, borderColor: 'green', fill: false, pointRadius: 0, borderWidth: 1 }
+                                { label: '5xx Latency Impact', data: data.impact_err5xx, borderColor: 'red', fill: false, pointRadius: 0, borderWidth: 1 }
                             ]
                         },
                         options: {
