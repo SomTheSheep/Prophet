@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: prometheus-anomaly-detector
-          image: sohamsal2026/fourier-historical:v4
+          image: sohamsal2026/fourier-historical:v5
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
