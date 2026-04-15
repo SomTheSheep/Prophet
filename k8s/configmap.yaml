@@ -38,31 +38,83 @@ data:
         query: 'min_over_time(elasticsearch_jvm_memory_used_bytes{host="elasticsearch01", area = "heap"}[30m])'
         forecast_periods: 1440
         seasonality: "daily"
+
+      - name: "memory_elasticsearch02_used"
+        query: 'sum(node_memory_MemTotal_bytes{instance="elasticsearch02", job="elasticsearch-nodes"} - node_memory_MemAvailable_bytes{instance="elasticsearch02", job="elasticsearch-nodes"})'
+        forecast_periods: 1440
+        seasonality: "daily"
+
+      - name: "cpu_elasticsearch02_used"
+        query: 'avg by (instance) (rate(node_cpu_seconds_total{mode!="idle", instance="elasticsearch02", job="elasticsearch-nodes"}[5m])) * 100'
+        forecast_periods: 1440
+        seasonality: "daily"
+
+      - name: "disk_elasticsearch02_used"
+        query: 'sum(elasticsearch_filesystem_data_size_bytes{host="elasticsearch02"}) - sum(elasticsearch_filesystem_data_available_bytes{host="elasticsearch02"})'
+        forecast_periods: 1440
+        seasonality: "daily"
+      
+      - name: "search_latency_elasticsearch02"
+        query: >-
+          rate(elasticsearch_indices_search_query_time_seconds{host="elasticsearch02"}[5m]) / (rate(elasticsearch_indices_search_query_total{host="elasticsearch02"}[5m]) > 0)
+        forecast_periods: 1440
+        seasonality: "daily"
+        
+      - name: "heap_baseline_elasticsearch02"
+        query: 'min_over_time(elasticsearch_jvm_memory_used_bytes{host="elasticsearch02", area = "heap"}[30m])'
+        forecast_periods: 1440
+        seasonality: "daily"
+
+      - name: "memory_elasticsearch03_used"
+        query: 'sum(node_memory_MemTotal_bytes{instance="elasticsearch03", job="elasticsearch-nodes"} - node_memory_MemAvailable_bytes{instance="elasticsearch03", job="elasticsearch-nodes"})'
+        forecast_periods: 1440
+        seasonality: "daily"
+
+      - name: "cpu_elasticsearch03_used"
+        query: 'avg by (instance) (rate(node_cpu_seconds_total{mode!="idle", instance="elasticsearch03", job="elasticsearch-nodes"}[5m])) * 100'
+        forecast_periods: 1440
+        seasonality: "daily"
+
+      - name: "disk_elasticsearch03_used"
+        query: 'sum(elasticsearch_filesystem_data_size_bytes{host="elasticsearch03"}) - sum(elasticsearch_filesystem_data_available_bytes{host="elasticsearch03"})'
+        forecast_periods: 1440
+        seasonality: "daily"
+      
+      - name: "search_latency_elasticsearch03"
+        query: >-
+          rate(elasticsearch_indices_search_query_time_seconds{host="elasticsearch03"}[5m]) / (rate(elasticsearch_indices_search_query_total{host="elasticsearch03"}[5m]) > 0)
+        forecast_periods: 1440
+        seasonality: "daily"
+        
+      - name: "heap_baseline_elasticsearch03"
+        query: 'min_over_time(elasticsearch_jvm_memory_used_bytes{host="elasticsearch03", area = "heap"}[30m])'
+        forecast_periods: 1440
+        seasonality: "daily"
       
       - name: "rabbitmq_messages_ready_total"
-        query: 'sum(rabbitmq_queue_messages_ready)'
+        query: 'sum(rabbitmq_queue_messages_ready{self="1"})'
         forecast_periods: 60
         seasonality: "daily"
 
       - name: "rabbitmq_publish_consume_delta"
         query: >-
-          sum(rate(rabbitmq_queue_messages_published_total[5m])) 
+          sum(rate(rabbitmq_queue_messages_published_total{self="1"}[5m])) 
           - 
-          sum(rate(rabbitmq_queue_messages_delivered_total[5m]))
+          sum(rate(rabbitmq_queue_messages_delivered_total{self="1"}[5m]))
         forecast_periods: 1440
         seasonality: "daily"
 
       - name: "rabbitmq_active_consumers"
-        query: 'sum(rabbitmq_queue_consumers)'
+        query: 'sum(rabbitmq_queue_consumers{self="1"})'
         forecast_periods: 60
         seasonality: "daily"
 
       - name: "rabbitmq_memory_used"
-        query: 'sum(rabbitmq_node_mem_used)'
+        query: 'sum(rabbitmq_node_mem_used{self="1"})'
         forecast_periods: 1440
         seasonality: "daily"
 
       - name: "rabbitmq_disk_free"
-        query: 'sum(rabbitmq_node_disk_free)'
+        query: 'sum(rabbitmq_node_disk_free{self="1"})'
         forecast_periods: 1440
         seasonality: "daily"
