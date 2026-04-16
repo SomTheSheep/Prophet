@@ -72,7 +72,7 @@ def apply_prophet_multivariate(df_target, df_cpu, df_rps, df_5xx, forecast_point
 
     df_merged = df_merged.sort_values('ds').ffill().fillna(0)
 
-    m = Prophet(interval_width=0.95, yearly_seasonality=False, weekly_seasonality=True, daily_seasonality=True)
+    m = Prophet(interval_width=0.95, yearly_seasonality=False, weekly_seasonality=False, daily_seasonality=True)
     
     if 'cpu' in df_merged.columns: m.add_regressor('cpu')
     if 'rps' in df_merged.columns: m.add_regressor('rps')
@@ -102,14 +102,14 @@ def extract_metric_val(df_row, column_name):
 def train_all_endpoints():
     logger.info("Starting background Prophet training for all endpoints...")
     end_time = datetime.utcnow().timestamp()
-    start_time = (datetime.utcnow() - timedelta(days=14)).timestamp()
+    start_time = (datetime.utcnow() - timedelta(days=2)).timestamp()
 
     for ep, queries in ENDPOINTS_CONFIG.items():
         if not queries.get('TARGET_QUERY'):
             continue
             
         t0 = time.time()
-        logger.info(f"Training [{ep}] using 14-day history")
+        logger.info(f"Training [{ep}] using 2-day history")
         
         df_target = query_prometheus(queries['TARGET_QUERY'], start_time, end_time, '5m')
         if df_target.empty:

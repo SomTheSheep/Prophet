@@ -91,86 +91,86 @@ data:
         forecast_periods: 1440
         seasonality: "daily"
       
-      - name: "rabbitmq_messages_ready_total_10_0_101_9_9419"
-        query: 'sum(rabbitmq_queue_messages_ready{instance="10.0.101.9:9419", self="1"})'
+      - name: "rabbitmq_messages_ready_total_10_0_65_46_9419"
+        query: 'sum(rabbitmq_queue_messages_ready{instance="10.0.65.46:9419", self="1"})'
         forecast_periods: 60
         seasonality: "daily"
 
-      - name: "rabbitmq_publish_consume_delta_10_0_101_9_9419"
+      - name: "rabbitmq_publish_consume_delta_10_0_65_46_9419"
         query: >-
-          sum(rate(rabbitmq_queue_messages_published_total{instance="10.0.101.9:9419", self="1"}[5m])) 
+          sum(rate(rabbitmq_queue_messages_published_total{instance="10.0.65.46:9419", self="1"}[5m])) 
           - 
-          sum(rate(rabbitmq_queue_messages_delivered_total{instance="10.0.101.9:9419", self="1"}[5m]))
+          sum(rate(rabbitmq_queue_messages_delivered_total{instance="10.0.65.46:9419", self="1"}[5m]))
         forecast_periods: 1440
         seasonality: "daily"
 
-      - name: "rabbitmq_active_consumers_10_0_101_9_9419"
-        query: 'sum(rabbitmq_queue_consumers{instance="10.0.101.9:9419", self="1"})'
+      - name: "rabbitmq_active_consumers_10_0_65_46_9419"
+        query: 'sum(rabbitmq_queue_consumers{instance="10.0.65.46:9419", self="1"})'
         forecast_periods: 60
         seasonality: "daily"
 
-      - name: "rabbitmq_memory_used_10_0_101_9_9419"
-        query: 'sum(rabbitmq_node_mem_used{instance="10.0.101.9:9419", self="1"})'
+      - name: "rabbitmq_memory_used_10_0_65_46_9419"
+        query: 'sum(rabbitmq_node_mem_used{instance="10.0.65.46:9419", self="1"})'
         forecast_periods: 1440
         seasonality: "daily"
 
-      - name: "rabbitmq_disk_free_10_0_101_9_9419"
-        query: 'sum(rabbitmq_node_disk_free{instance="10.0.101.9:9419", self="1"})'
+      - name: "rabbitmq_disk_free_10_0_65_46_9419"
+        query: 'sum(rabbitmq_node_disk_free{instance="10.0.65.46:9419", self="1"})'
         forecast_periods: 1440
         seasonality: "daily"
 
-      - name: "rabbitmq_messages_ready_total_10_0_96_252_9419"
-        query: 'sum(rabbitmq_queue_messages_ready{instance="10.0.96.252:9419", self="1"})'
+      - name: "rabbitmq_messages_ready_total_10_0_66_180_9419"
+        query: 'sum(rabbitmq_queue_messages_ready{instance="10.0.66.180:9419", self="1"})'
         forecast_periods: 60
         seasonality: "daily"
 
-      - name: "rabbitmq_publish_consume_delta_10_0_96_252_9419"
+      - name: "rabbitmq_publish_consume_delta_10_0_66_180_9419"
         query: >-
-          sum(rate(rabbitmq_queue_messages_published_total{instance="10.0.96.252:9419", self="1"}[5m])) 
+          sum(rate(rabbitmq_queue_messages_published_total{instance="10.0.66.180:9419", self="1"}[5m])) 
           - 
-          sum(rate(rabbitmq_queue_messages_delivered_total{instance="10.0.96.252:9419", self="1"}[5m]))
+          sum(rate(rabbitmq_queue_messages_delivered_total{instance="10.0.66.180:9419", self="1"}[5m]))
         forecast_periods: 1440
         seasonality: "daily"
 
-      - name: "rabbitmq_active_consumers_10_0_96_252_9419"
-        query: 'sum(rabbitmq_queue_consumers{instance="10.0.96.252:9419", self="1"})'
+      - name: "rabbitmq_active_consumers_10_0_66_180_9419"
+        query: 'sum(rabbitmq_queue_consumers{instance="10.0.66.180:9419", self="1"})'
         forecast_periods: 60
         seasonality: "daily"
 
-      - name: "rabbitmq_memory_used_10_0_96_252_9419"
-        query: 'sum(rabbitmq_node_mem_used{instance="10.0.96.252:9419", self="1"})'
+      - name: "rabbitmq_memory_used_10_0_66_180_9419"
+        query: 'sum(rabbitmq_node_mem_used{instance="10.0.66.180:9419", self="1"})'
         forecast_periods: 1440
         seasonality: "daily"
 
-      - name: "rabbitmq_disk_free_10_0_96_252_9419"
-        query: 'sum(rabbitmq_node_disk_free{instance="10.0.96.252:9419", self="1"})'
+      - name: "rabbitmq_disk_free_10_0_66_180_9419"
+        query: 'sum(rabbitmq_node_disk_free{instance="10.0.66.180:9419", self="1"})'
         forecast_periods: 1440
         seasonality: "daily"
 
-      - name: "rabbitmq_messages_ready_total_10_0_98_32_9419"
-        query: 'sum(rabbitmq_queue_messages_ready{instance="10.0.98.32:9419", self="1"})'
+      - name: "rabbitmq_messages_ready_total_10_0_68_220_9419"
+        query: 'sum(rabbitmq_queue_messages_ready{instance="10.0.68.220:9419", self="1"})'
         forecast_periods: 60
         seasonality: "daily"
 
-      - name: "rabbitmq_publish_consume_delta_10_0_98_32_9419"
+      - name: "rabbitmq_publish_consume_delta_10_0_68_220_9419"
         query: >-
-          sum(rate(rabbitmq_queue_messages_published_total{instance="10.0.98.32:9419", self="1"}[5m])) 
+          sum(rate(rabbitmq_queue_messages_published_total{instance="10.0.68.220:9419", self="1"}[5m])) 
           - 
-          sum(rate(rabbitmq_queue_messages_delivered_total{instance="10.0.98.32:9419", self="1"}[5m]))
+          sum(rate(rabbitmq_queue_messages_delivered_total{instance="10.0.68.220:9419", self="1"}[5m]))
         forecast_periods: 1440
         seasonality: "daily"
 
-      - name: "rabbitmq_active_consumers_10_0_98_32_9419"
-        query: 'sum(rabbitmq_queue_consumers{instance="10.0.98.32:9419", self="1"})'
+      - name: "rabbitmq_active_consumers_10_0_68_220_9419"
+        query: 'sum(rabbitmq_queue_consumers{instance="10.0.68.220:9419", self="1"})'
         forecast_periods: 60
         seasonality: "daily"
 
-      - name: "rabbitmq_memory_used_10_0_98_32_9419"
-        query: 'sum(rabbitmq_node_mem_used{instance="10.0.98.32:9419", self="1"})'
+      - name: "rabbitmq_memory_used_10_0_68_220_9419"
+        query: 'sum(rabbitmq_node_mem_used{instance="10.0.68.220:9419", self="1"})'
         forecast_periods: 1440
         seasonality: "daily"
 
-      - name: "rabbitmq_disk_free_10_0_98_32_9419"
-        query: 'sum(rabbitmq_node_disk_free{instance="10.0.98.32:9419", self="1"})'
+      - name: "rabbitmq_disk_free_10_0_68_220_9419"
+        query: 'sum(rabbitmq_node_disk_free{instance="10.0.68.220:9419", self="1"})'
         forecast_periods: 1440
         seasonality: "daily"
