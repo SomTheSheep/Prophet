@@ -1,25 +1,20 @@
-apiVersion: v1
+﻿apiVersion: v1
 kind: ConfigMap
 metadata:
   name: fourier-endpoints-config
   namespace: sre
 data:
+  simulation.json: |
+    {
+      "LIVE_START": "2026-04-13T17:55:09Z",
+      "LIVE_END": "2026-04-20T13:27:15Z",
+      "TRAIN_WINDOW_DAYS": 6.72,
+      "RETRAIN_EVERY_HOURS": 6
+    }
   endpoints.json: |
     {
-      "widevine": {
-        "TARGET_QUERY": "histogram_quantile(0.50, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/ias/v1/contentlicenses/widevine'}[10m])) by (le))",
-        "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'ias-.*', container!='POD'}[10m]))"
-      },
-      "/ias/v2": {
-        "TARGET_QUERY": "histogram_quantile(0.50, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/ias/v2'}[10m])) by (le))",
-        "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'ias-.*', container!='POD'}[10m]))"
-      },
-      "/cdvr/v2": {
-        "TARGET_QUERY": "histogram_quantile(0.50, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/cdvr/v2'}[10m])) by (le))",
-        "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'user-recordings-.*', container!='POD'}[10m]))"
-      },
-      "/odm": {
-        "TARGET_QUERY": "histogram_quantile(0.50, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/odm'}[10m])) by (le))",
-        "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'odm-.*', container!='POD'}[10m]))"
+      "/rmg/v1/operator/entitlements": {
+        "TARGET_QUERY": "histogram_quantile(0.50, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url=~'/rmg/v1/operator/entitlements'}[10m])) by (le))",
+        "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'rmg-.*', container!='POD'}[10m]))"
       }
     }

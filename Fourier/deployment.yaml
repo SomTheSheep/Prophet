@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: prometheus-anomaly-detector
-          image: sohamsal2026/fourier-historical:v7
+          image: sohamsal2026/fourier-historical:v6
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -31,10 +31,8 @@ spec:
                 secretKeyRef:
                   name: prometheus-auth
                   key: token
-            - name: FLT_DATA_START_TIME
-              value: "2026-02-16T12:00:00Z"
-            - name: FLT_DATA_END_TIME
-              value: "2026-03-04T05:21:16Z"
+            - name: FOURIER_DB_URI
+              value: "postgresql://fourier_user:fourier_pass@fourier-postgres-service:5432/fourier_db"
           volumeMounts:
             - name: config-volume
               mountPath: /etc/fourier
