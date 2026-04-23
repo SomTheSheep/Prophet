@@ -5,8 +5,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy our custom script to the image
-COPY fourier_simulator.py ./app.py
+COPY fourier_simulator.py .
 
-EXPOSE 8080
-
-CMD ["python", "app.py"]
+CMD ["python", "fourier_simulator.py"]
