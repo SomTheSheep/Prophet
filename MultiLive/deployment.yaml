@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: multilive-anomaly-detector
-          image: sohamsal2026/multilive:v3
+          image: sohamsal2026/multilive:v4
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
