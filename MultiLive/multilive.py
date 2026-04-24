@@ -102,14 +102,14 @@ def extract_metric_val(df_row, column_name):
 def train_all_endpoints():
     logger.info("Starting background Prophet training for all endpoints...")
     end_time = datetime.utcnow().timestamp()
-    start_time = (datetime.utcnow() - timedelta(days=2)).timestamp()
+    start_time = (datetime.utcnow() - timedelta(days=14)).timestamp()
 
     for ep, queries in ENDPOINTS_CONFIG.items():
         if not queries.get('TARGET_QUERY'):
             continue
             
         t0 = time.time()
-        logger.info(f"Training [{ep}] using 2-day history")
+        logger.info(f"Training [{ep}] using 14-day history")
         
         df_target = query_prometheus(queries['TARGET_QUERY'], start_time, end_time, '5m')
         if df_target.empty:

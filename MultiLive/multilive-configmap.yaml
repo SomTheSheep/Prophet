@@ -15,5 +15,10 @@ data:
         "TARGET_QUERY": "histogram_quantile(0.50, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url='/metadata/delivery/GLOBAL/btv/services'}[10m])) by (le))",
         "REGRESSOR_RPS": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse',request_url='/metadata/delivery/GLOBAL/btv/services'}[10m]))",
         "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'metadataserver-.*', container!='POD'}[10m]))"
+      },
+      "/rmg/v1/operator/entitlements": {
+        "TARGET_QUERY": "histogram_quantile(0.50, sum(rate(istio_request_duration_milliseconds_bucket{app='ingress-gateway-otvpcse',request_url=~'/rmg/v1/operator/entitlements'}[10m])) by (le))",
+        "REGRESSOR_CPU": "sum(rate(container_cpu_usage_seconds_total{namespace='otvpcse', pod=~'rmg-.*', container!='POD'}[10m]))",
+        "REGRESSOR_RPS": "sum(rate(istio_requests_total{app='ingress-gateway-otvpcse',request_url=~'/rmg/v1/operator/entitlements'}[10m]))"
       }
     }
