@@ -1,0 +1,1207 @@
+Importing plotly failed. Interactive plots will not work.
+INFO:__main__:Starting Prophetig (Univariate) backfill simulator from 2026-04-13 17:55:09 to 2026-04-20 13:27:15
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-13 17:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-13 23:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 25 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-14 05:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 0 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-14 11:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 0 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-14 17:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 0 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-14 23:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 0 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-15 05:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 0 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-15 11:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-15 17:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-15 23:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-16 05:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-16 11:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-16 17:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-16 23:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-17 05:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-17 11:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-17 17:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 25 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-17 23:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 0 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-18 05:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 0 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-18 11:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-18 17:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-18 23:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-19 05:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-19 11:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-19 17:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-19 23:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-20 05:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 648 rows to PostgreSQL
+INFO:__main__:--- Processing Virtual Time Window: 2026-04-20 11:55:09 ---
+INFO:__main__:[rabbitmq_messages_ready_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_101_9] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_messages_ready_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_96_252] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:__main__:[rabbitmq_messages_ready_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_publish_consume_delta_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:[rabbitmq_active_consumers_10_0_98_32] Training 6.72d history, predicting next 6h
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'prometheus.sitopflab03.otv-staging.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+INFO:cmdstanpy:Chain [1] start processing
+INFO:cmdstanpy:Chain [1] done processing
+INFO:__main__:Writing 0 rows to PostgreSQL
+INFO:__main__:✅ Historical Backfill Complete!

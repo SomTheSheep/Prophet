@@ -28,7 +28,7 @@ spec:
                   name: prometheus-auth
                   key: token
             - name: PROPHETIG_DB_URI
-              value: "postgresql://prophetig_user:prophetig_pass@prophetig-postgres-service:5432/prophetig_db"
+              value: "postgresql://fourier_user:fourier_pass@fourier-postgres-service:5432/fourier_db"
           volumeMounts:
             - name: config-volume
               mountPath: /etc/prophetig
