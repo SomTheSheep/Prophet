@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prophetig-postgres
+  namespace: sre
+  labels:
+    app: prophetig-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prophetig-postgres
+  template:
+    metadata:
+      labels:
+        app: prophetig-postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:15-alpine
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_USER
+          value: prophetig_user
+        - name: POSTGRES_PASSWORD
+          value: prophetig_pass
+        - name: POSTGRES_DB
+          value: prophetig_db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prophetig-postgres-service
+  namespace: sre
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: prophetig-postgres

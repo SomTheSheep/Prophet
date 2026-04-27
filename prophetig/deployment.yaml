@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prophetig-simulator
+  namespace: sre
+  labels:
+    app: prophetig-simulator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prophetig-simulator
+  template:
+    metadata:
+      labels:
+        app: prophetig-simulator
+    spec:
+      containers:
+        - name: prophetig-simulator
+          image: sohamsal2026/prophetig-historical:v1
+          imagePullPolicy: Always
+          env:
+            - name: FLT_PROM_URL
+              value: "https://prometheus.sitopflab03.otv-staging.com" 
+            - name: FLT_PROM_ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: prometheus-auth
+                  key: token
+            - name: PROPHETIG_DB_URI
+              value: "postgresql://prophetig_user:prophetig_pass@prophetig-postgres-service:5432/prophetig_db"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/prophetig
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+      volumes:
+        - name: config-volume
+          configMap:
+            name: prophetig-config

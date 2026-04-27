@@ -1,0 +1,43 @@
+﻿apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prophetig-config
+  namespace: sre
+data:
+  simulation.json: |
+    {
+      "LIVE_START": "2026-04-13T17:55:09Z",
+      "LIVE_END": "2026-04-20T13:27:15Z",
+      "TRAIN_WINDOW_DAYS": 6.72,
+      "RETRAIN_EVERY_HOURS": 6
+    }
+  metrics.json: |
+    {
+      "rabbitmq_messages_ready_10_0_101_9": {
+        "TARGET_QUERY": "sum(rabbitmq_queue_messages_ready{instance='10.0.101.9:9419', self='1'})"
+      },
+      "rabbitmq_publish_consume_delta_10_0_101_9": {
+        "TARGET_QUERY": "sum(rate(rabbitmq_queue_messages_published_total{instance='10.0.101.9:9419', self='1'}[5m])) - sum(rate(rabbitmq_queue_messages_delivered_total{instance='10.0.101.9:9419', self='1'}[5m]))"
+      },
+      "rabbitmq_active_consumers_10_0_101_9": {
+        "TARGET_QUERY": "sum(rabbitmq_queue_consumers{instance='10.0.101.9:9419', self='1'})"
+      },
+      "rabbitmq_messages_ready_10_0_96_252": {
+        "TARGET_QUERY": "sum(rabbitmq_queue_messages_ready{instance='10.0.96.252:9419', self='1'})"
+      },
+      "rabbitmq_publish_consume_delta_10_0_96_252": {
+        "TARGET_QUERY": "sum(rate(rabbitmq_queue_messages_published_total{instance='10.0.96.252:9419', self='1'}[5m])) - sum(rate(rabbitmq_queue_messages_delivered_total{instance='10.0.96.252:9419', self='1'}[5m]))"
+      },
+      "rabbitmq_active_consumers_10_0_96_252": {
+        "TARGET_QUERY": "sum(rabbitmq_queue_consumers{instance='10.0.96.252:9419', self='1'})"
+      },
+      "rabbitmq_messages_ready_10_0_98_32": {
+        "TARGET_QUERY": "sum(rabbitmq_queue_messages_ready{instance='10.0.98.32:9419', self='1'})"
+      },
+      "rabbitmq_publish_consume_delta_10_0_98_32": {
+        "TARGET_QUERY": "sum(rate(rabbitmq_queue_messages_published_total{instance='10.0.98.32:9419', self='1'}[5m])) - sum(rate(rabbitmq_queue_messages_delivered_total{instance='10.0.98.32:9419', self='1'}[5m]))"
+      },
+      "rabbitmq_active_consumers_10_0_98_32": {
+        "TARGET_QUERY": "sum(rabbitmq_queue_consumers{instance='10.0.98.32:9419', self='1'})"
+      }
+    }

@@ -1,0 +1,5 @@
+requests
+pandas
+prophet
+SQLAlchemy
+psycopg2-binary
