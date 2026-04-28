@@ -39,5 +39,14 @@ data:
       },
       "rabbitmq_active_consumers_10_0_98_32": {
         "TARGET_QUERY": "sum(rabbitmq_queue_consumers{instance='10.0.98.32:9419', self='1'})"
+      },
+      "rabbitmq_cpu_used_10_0_101_9": {
+        "TARGET_QUERY": "rate(process_cpu_seconds_total{instance='10.0.101.9:9419', job='rabbitmq-exporter'}[5m]) * 100"
+      },
+      "rabbitmq_cpu_used_10_0_96_252": {
+        "TARGET_QUERY": "rate(process_cpu_seconds_total{instance='10.0.96.252:9419', job='rabbitmq-exporter'}[5m]) * 100"
+      },
+      "rabbitmq_cpu_used_10_0_98_32": {
+        "TARGET_QUERY": "rate(process_cpu_seconds_total{instance='10.0.98.32:9419', job='rabbitmq-exporter'}[5m]) * 100"
       }
     }
