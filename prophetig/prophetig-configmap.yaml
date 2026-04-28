@@ -40,6 +40,24 @@ data:
       "rabbitmq_active_consumers_10_0_98_32": {
         "TARGET_QUERY": "sum(rabbitmq_queue_consumers{instance='10.0.98.32:9419', self='1'})"
       },
+      "rabbitmq_messages_unacked_10_0_101_9": {
+        "TARGET_QUERY": "sum(rabbitmq_queue_messages_unacknowledged{instance='10.0.101.9:9419', self='1'})"
+      },
+      "rabbitmq_delivery_rate_10_0_101_9": {
+        "TARGET_QUERY": "sum(rate(rabbitmq_queue_messages_delivered_total{instance='10.0.101.9:9419', self='1'}[5m]))"
+      },
+      "rabbitmq_messages_unacked_10_0_96_252": {
+        "TARGET_QUERY": "sum(rabbitmq_queue_messages_unacknowledged{instance='10.0.96.252:9419', self='1'})"
+      },
+      "rabbitmq_delivery_rate_10_0_96_252": {
+        "TARGET_QUERY": "sum(rate(rabbitmq_queue_messages_delivered_total{instance='10.0.96.252:9419', self='1'}[5m]))"
+      },
+      "rabbitmq_messages_unacked_10_0_98_32": {
+        "TARGET_QUERY": "sum(rabbitmq_queue_messages_unacknowledged{instance='10.0.98.32:9419', self='1'})"
+      },
+      "rabbitmq_delivery_rate_10_0_98_32": {
+        "TARGET_QUERY": "sum(rate(rabbitmq_queue_messages_delivered_total{instance='10.0.98.32:9419', self='1'}[5m]))"
+      },
       "rabbitmq_cpu_used_rabbitmq01": {
         "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq01'}) * 100)"
       },
