@@ -66,5 +66,23 @@ data:
       },
       "rabbitmq_cpu_used_rabbitmq03": {
         "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq03'}) * 100)"
+      },
+      "rabbitmq_disk_used_bytes_rabbitmq01": {
+        "TARGET_QUERY": "sum((node_filesystem_size_bytes{fstype=~'ext4|xfs',job='rabbitmq-nodes'} - node_filesystem_free_bytes{fstype=~'ext4|xfs',job='rabbitmq-nodes'}) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq01'})"
+      },
+      "rabbitmq_disk_used_bytes_rabbitmq02": {
+        "TARGET_QUERY": "sum((node_filesystem_size_bytes{fstype=~'ext4|xfs',job='rabbitmq-nodes'} - node_filesystem_free_bytes{fstype=~'ext4|xfs',job='rabbitmq-nodes'}) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq02'})"
+      },
+      "rabbitmq_disk_used_bytes_rabbitmq03": {
+        "TARGET_QUERY": "sum((node_filesystem_size_bytes{fstype=~'ext4|xfs',job='rabbitmq-nodes'} - node_filesystem_free_bytes{fstype=~'ext4|xfs',job='rabbitmq-nodes'}) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq03'})"
+      },
+      "rabbitmq_memory_used_bytes_rabbitmq01": {
+        "TARGET_QUERY": "(node_memory_MemTotal_bytes * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq01'}) - (node_memory_MemAvailable_bytes * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq01'})"
+      },
+      "rabbitmq_memory_used_bytes_rabbitmq02": {
+        "TARGET_QUERY": "(node_memory_MemTotal_bytes * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq02'}) - (node_memory_MemAvailable_bytes * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq02'})"
+      },
+      "rabbitmq_memory_used_bytes_rabbitmq03": {
+        "TARGET_QUERY": "(node_memory_MemTotal_bytes * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq03'}) - (node_memory_MemAvailable_bytes * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq03'})"
       }
     }
