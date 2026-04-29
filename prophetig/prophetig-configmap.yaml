@@ -9,7 +9,7 @@ data:
       "LIVE_START": "2026-04-13T17:55:09Z",
       "LIVE_END": "2026-04-20T13:27:15Z",
       "TRAIN_WINDOW_DAYS": 6.72,
-      "RETRAIN_EVERY_HOURS": 6
+      "RETRAIN_EVERY_HOURS": 24
     }
   metrics.json: |
     {
