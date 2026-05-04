@@ -69,7 +69,7 @@ def apply_prophet_univariate(df_target, forecast_points):
 
     # Use weekly_seasonality if >= ~7 days train window
     use_weekly = TRAIN_WINDOW_DAYS >= 6.5
-    m = Prophet(interval_width=0.95, yearly_seasonality=False, weekly_seasonality=use_weekly, daily_seasonality=True)
+    m = Prophet(interval_width=0.99, yearly_seasonality=False, weekly_seasonality=use_weekly, daily_seasonality=True)
 
     if len(df_merged) < 2: return pd.DataFrame(), m
 
