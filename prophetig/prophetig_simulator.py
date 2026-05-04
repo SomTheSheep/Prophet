@@ -67,9 +67,21 @@ def apply_prophet_univariate(df_target, forecast_points):
     df_merged = df_target.rename(columns={'y': 'y'})
     df_merged = df_merged.sort_values('ds').ffill().fillna(0)
 
+    # Load Hyperparameters from Environment Variables
+    interval_width = float(os.environ.get('PROPHET_INTERVAL_WIDTH', 0.95))
+    changepoint_prior_scale = float(os.environ.get('PROPHET_CHANGEPOINT_PRIOR_SCALE', 0.05))
+    seasonality_prior_scale = float(os.environ.get('PROPHET_SEASONALITY_PRIOR_SCALE', 10.0))
+
     # Use weekly_seasonality if >= ~7 days train window
     use_weekly = TRAIN_WINDOW_DAYS >= 6.5
-    m = Prophet(interval_width=0.99, yearly_seasonality=False, weekly_seasonality=use_weekly, daily_seasonality=True)
+    m = Prophet(
+        interval_width=interval_width,
+        changepoint_prior_scale=changepoint_prior_scale,
+        seasonality_prior_scale=seasonality_prior_scale,
+        yearly_seasonality=False,
+        weekly_seasonality=use_weekly,
+        daily_seasonality=True
+    )
 
     if len(df_merged) < 2: return pd.DataFrame(), m
 

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: prophetig-simulator
-          image: sohamsal2026/prophetig-historical:v2
+          image: sohamsal2026/prophetig-historical:v3
           imagePullPolicy: Always
           env:
             - name: FLT_PROM_URL
@@ -29,6 +29,14 @@ spec:
                   key: token
             - name: PROPHETIG_DB_URI
               value: "postgresql://fourier_user:fourier_pass@fourier-postgres-service:5432/fourier_db"
+            - name: PROPHET_INTERVAL_WIDTH
+              value: "0.99"
+            - name: PROPHET_CHANGEPOINT_PRIOR_SCALE
+              value: "0.03"
+            - name: PROPHET_SEASONALITY_PRIOR_SCALE
+              value: "10.0"
+            - name: PROPHET_FOURIER_ORDER
+              value: "10"
           volumeMounts:
             - name: config-volume
               mountPath: /etc/prophetig
