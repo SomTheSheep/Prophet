@@ -6,9 +6,9 @@ metadata:
 data:
   simulation.json: |
     {
-      "LIVE_START": "2026-04-13T17:55:09Z",
-      "LIVE_END": "2026-04-20T13:27:15Z",
-      "TRAIN_WINDOW_DAYS": 6.72,
+      "LIVE_START": "2026-04-29T00:01:43Z",
+      "LIVE_END": "2026-05-04T12:05:30Z",
+      "TRAIN_WINDOW_DAYS": 10,
       "RETRAIN_EVERY_HOURS": 24
     }
   metrics.json: |
