@@ -36,12 +36,12 @@ spec:
             - name: PROPHET_SEASONALITY_PRIOR_SCALE
               value: "10.0"
             - name: PROPHET_FOURIER_ORDER
-              value: "10"
+              value: "6"
           volumeMounts:
             - name: config-volume
               mountPath: /etc/prophetig
           resources:
-            requests:
+            requests:  
               memory: "512Mi"
               cpu: "250m"
             limits:
