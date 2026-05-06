@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: prophetig-simulator
-          image: sohamsal2026/prophetig-historical:v4
+          image: sohamsal2026/prophetig-historical:v5
           imagePullPolicy: Always
           env:
             - name: FLT_PROM_URL
