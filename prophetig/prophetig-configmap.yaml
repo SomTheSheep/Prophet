@@ -59,13 +59,49 @@ data:
         "TARGET_QUERY": "sum(rate(rabbitmq_queue_messages_delivered_total{instance='10.0.98.32:9419', self='1'}[5m]))"
       },
       "rabbitmq_cpu_used_rabbitmq01": {
-        "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq01'}) * 100)"
+        "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq01'}) * 100)",
+        "NON_NEGATIVE": true,
+        "PROPHET_INTERVAL_WIDTH": 0.95,
+        "PROPHET_CHANGEPOINT_PRIOR_SCALE": 0.05,
+        "PROPHET_SEASONALITY_PRIOR_SCALE": 3.0,
+        "BAND_SIGMA_MULTIPLIER": 2.2,
+        "UPPER_QUANTILE_MULTIPLIER": 1.2,
+        "UPPER_SIGMA_MULTIPLIER": 4.0,
+        "ENABLE_UPPER_CAP": true,
+        "MINIMUM_UPPER_CAP": 2.0,
+        "HOURLY_FOURIER_ORDER": 4,
+        "SIX_HOUR_FOURIER_ORDER": 3,
+        "DAILY_SPIKE_FOURIER_ORDER": 6
       },
       "rabbitmq_cpu_used_rabbitmq02": {
-        "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq02'}) * 100)"
+        "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq02'}) * 100)",
+        "NON_NEGATIVE": true,
+        "PROPHET_INTERVAL_WIDTH": 0.95,
+        "PROPHET_CHANGEPOINT_PRIOR_SCALE": 0.05,
+        "PROPHET_SEASONALITY_PRIOR_SCALE": 3.0,
+        "BAND_SIGMA_MULTIPLIER": 2.2,
+        "UPPER_QUANTILE_MULTIPLIER": 1.2,
+        "UPPER_SIGMA_MULTIPLIER": 4.0,
+        "ENABLE_UPPER_CAP": true,
+        "MINIMUM_UPPER_CAP": 2.0,
+        "HOURLY_FOURIER_ORDER": 4,
+        "SIX_HOUR_FOURIER_ORDER": 3,
+        "DAILY_SPIKE_FOURIER_ORDER": 6
       },
       "rabbitmq_cpu_used_rabbitmq03": {
-        "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq03'}) * 100)"
+        "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq03'}) * 100)",
+        "NON_NEGATIVE": true,
+        "PROPHET_INTERVAL_WIDTH": 0.95,
+        "PROPHET_CHANGEPOINT_PRIOR_SCALE": 0.05,
+        "PROPHET_SEASONALITY_PRIOR_SCALE": 3.0,
+        "BAND_SIGMA_MULTIPLIER": 2.2,
+        "UPPER_QUANTILE_MULTIPLIER": 1.2,
+        "UPPER_SIGMA_MULTIPLIER": 4.0,
+        "ENABLE_UPPER_CAP": true,
+        "MINIMUM_UPPER_CAP": 2.0,
+        "HOURLY_FOURIER_ORDER": 4,
+        "SIX_HOUR_FOURIER_ORDER": 3,
+        "DAILY_SPIKE_FOURIER_ORDER": 6
       },
       "rabbitmq_disk_used_bytes_rabbitmq01": {
         "TARGET_QUERY": "sum((node_filesystem_size_bytes{fstype=~'ext4|xfs',job='rabbitmq-nodes'} - node_filesystem_free_bytes{fstype=~'ext4|xfs',job='rabbitmq-nodes'}) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq01'})"
@@ -86,6 +122,17 @@ data:
         "TARGET_QUERY": "(node_memory_MemTotal_bytes * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq03'}) - (node_memory_MemAvailable_bytes * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq03'})"
       },
       "cassandra_cpu_used_cassandra03": {
-        "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='cassandra03'}) * 100)"
+        "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='cassandra03'}) * 100)",
+        "NON_NEGATIVE": true,
+        "PROPHET_INTERVAL_WIDTH": 0.98,
+        "PROPHET_CHANGEPOINT_PRIOR_SCALE": 0.08,
+        "PROPHET_SEASONALITY_PRIOR_SCALE": 5.0,
+        "BAND_SIGMA_MULTIPLIER": 3.0,
+        "UPPER_QUANTILE_MULTIPLIER": 1.4,
+        "UPPER_SIGMA_MULTIPLIER": 5.0,
+        "ENABLE_UPPER_CAP": true,
+        "HOURLY_FOURIER_ORDER": 5,
+        "SIX_HOUR_FOURIER_ORDER": 4,
+        "DAILY_SPIKE_FOURIER_ORDER": 8
       }
     }
