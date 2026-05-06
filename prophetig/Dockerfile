@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     build-essential \
     libpq-dev \
+    vim \
     && rm -rf /var/lib/apt/lists/*
 
 # Symlink python3 to python (often expected by scripts)
