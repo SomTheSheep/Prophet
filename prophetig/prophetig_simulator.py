@@ -87,6 +87,7 @@ def apply_prophet_univariate(df_target, forecast_points):
 
     m.add_seasonality(name='hourly', period=1/24, fourier_order=10)
     m.add_seasonality(name='6hour', period=6/24, fourier_order=8)
+    m.add_seasonality(name='daily_spike', period=1, fourier_order=25)
 
     if len(df_merged) < 2: return pd.DataFrame(), m
 
@@ -97,26 +98,32 @@ def apply_prophet_univariate(df_target, forecast_points):
 
     p95 = np.percentile(df_merged['y'], 95)
     p99 = np.percentile(df_merged['y'], 99)
+    max_val = np.max(df_merged['y'])
     std = np.std(df_merged['y'])
 
     forecast['yhat_upper'] = np.maximum(
         forecast['yhat_upper'],
-        forecast['yhat'] + (std * 3)
+        forecast['yhat'] + (std * 6)
     )
 
     forecast['yhat_upper'] = np.maximum(
         forecast['yhat_upper'],
-        p95
+        p95 * 2
     )
 
     forecast['yhat_upper'] = np.maximum(
         forecast['yhat_upper'],
-        p99 * 0.7
+        p99 * 2
+    )
+
+    forecast['yhat_upper'] = np.maximum(
+        forecast['yhat_upper'],
+        max_val * 0.95
     )
 
     forecast['yhat_lower'] = np.minimum(
         forecast['yhat_lower'],
-        forecast['yhat'] - (std * 3)
+        forecast['yhat'] - (std * 6)
     )
 
     return forecast, m
