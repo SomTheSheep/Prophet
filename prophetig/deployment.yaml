@@ -36,7 +36,7 @@ spec:
             - name: PROPHET_SEASONALITY_PRIOR_SCALE
               value: "10.0"
             - name: PROPHET_FOURIER_ORDER
-              value: "6"
+              value: "20"
           volumeMounts:
             - name: config-volume
               mountPath: /etc/prophetig
