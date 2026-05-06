@@ -30,11 +30,11 @@ spec:
             - name: PROPHETIG_DB_URI
               value: "postgresql://fourier_user:fourier_pass@fourier-postgres-service:5432/fourier_db"
             - name: PROPHET_INTERVAL_WIDTH
-              value: "0.999"
+              value: "0.99"
             - name: PROPHET_CHANGEPOINT_PRIOR_SCALE
-              value: "0.5"
+              value: "0.05"
             - name: PROPHET_SEASONALITY_PRIOR_SCALE
-              value: "20.0"
+              value: "10.0"
           volumeMounts:
             - name: config-volume
               mountPath: /etc/prophetig
