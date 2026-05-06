@@ -84,5 +84,8 @@ data:
       },
       "rabbitmq_memory_used_bytes_rabbitmq03": {
         "TARGET_QUERY": "(node_memory_MemTotal_bytes * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq03'}) - (node_memory_MemAvailable_bytes * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='rabbitmq03'})"
-      }
+      },
+      "cassandra_cpu_used_cassandra03": {
+        "TARGET_QUERY": "100 - (avg(irate(node_cpu_seconds_total{mode='idle'}[5m]) * on (instance) group_left (nodename) node_uname_info{job!~'node-exporter',nodename='cassandra03'}) * 100)"
+      },
     }
