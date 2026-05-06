@@ -23,4 +23,4 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 # Copy our custom script to the image
 COPY prophetig_simulator.py .
 
-CMD ["python", "prophetig_simulator.py"]
+CMD ["sh", "-c", "python prophetig_simulator.py && tail -f /dev/null"]
