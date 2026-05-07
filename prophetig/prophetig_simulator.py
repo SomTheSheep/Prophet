@@ -81,20 +81,25 @@ def apply_prophet_univariate(df_target, forecast_points):
     df_merged = add_spike_regressor(df_merged)
 
     # Load Hyperparameters from Environment Variables
-    interval_width = float(os.environ.get('PROPHET_INTERVAL_WIDTH', 0.95))
-    changepoint_prior_scale = float(os.environ.get('PROPHET_CHANGEPOINT_PRIOR_SCALE', 0.05))
+    interval_width = float(os.environ.get('PROPHET_INTERVAL_WIDTH', 0.99))
+    changepoint_prior_scale = float(os.environ.get('PROPHET_CHANGEPOINT_PRIOR_SCALE', 0.03))
     seasonality_prior_scale = float(os.environ.get('PROPHET_SEASONALITY_PRIOR_SCALE', 10.0))
 
-    # Use weekly_seasonality if >= ~7 days train window
-    use_weekly = TRAIN_WINDOW_DAYS >= 6.5
+    # Use weekly_seasonality if >= ~14 days train window
+    use_weekly = TRAIN_WINDOW_DAYS >= 14
     m = Prophet(
         interval_width=interval_width,
         changepoint_prior_scale=changepoint_prior_scale,
         seasonality_prior_scale=seasonality_prior_scale,
         yearly_seasonality=False,
         weekly_seasonality=use_weekly,
-        daily_seasonality=True
+        daily_seasonality=True,
+        seasonality_mode='multiplicative',
+        changepoint_range=0.95
     )
+    
+    m.add_seasonality(name='hourly', period=1/24, fourier_order=6)
+    m.add_seasonality(name='6hour', period=6/24, fourier_order=4)
     
     # Tell Prophet to explicitly account for the boolean regressor column
     m.add_regressor('cpu_spike')
@@ -109,6 +114,8 @@ def apply_prophet_univariate(df_target, forecast_points):
     future = add_spike_regressor(future)
     
     forecast = m.predict(future)
+    
+    # No manual band overrides — trust Prophet's uncertainty estimation
     return forecast, m
 
 def simulate_historical_data():
