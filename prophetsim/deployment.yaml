@@ -49,3 +49,4 @@ spec:
         - name: config-volume
           configMap:
             name: prophetsim-config
+            name: prophetsim-config

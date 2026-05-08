@@ -24,8 +24,8 @@ DB_URI = os.environ.get(
     'postgresql://prophetig_user:prophetig_pass@prophetig-postgres-service:5432/prophetig_db'
 )
 
-METRICS_FILE = '/etc/prophetig/metrics.json'
-SIMULATION_FILE = '/etc/prophetig/simulation.json'
+METRICS_FILE = '/etc/prophetsim/metrics.json'
+SIMULATION_FILE = '/etc/prophetsim/simulation.json'
 
 
 def load_configs():
