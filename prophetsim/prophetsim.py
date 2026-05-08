@@ -35,10 +35,16 @@ def load_configs():
     if os.path.exists(METRICS_FILE):
         with open(METRICS_FILE, 'r') as f:
             metrics = json.load(f)
+        logger.info(f"Loaded {len(metrics)} metrics from {METRICS_FILE}")
+    else:
+        logger.warning(f"{METRICS_FILE} not found! No metrics will be processed.")
 
     if os.path.exists(SIMULATION_FILE):
         with open(SIMULATION_FILE, 'r') as f:
             simulation = json.load(f)
+        logger.info(f"Loaded simulation config from {SIMULATION_FILE}")
+    else:
+        logger.warning(f"{SIMULATION_FILE} not found! Using default simulation timestamps.")
 
     return metrics, simulation
 
