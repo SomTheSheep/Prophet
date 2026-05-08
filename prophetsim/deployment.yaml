@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prophetsim
+  namespace: sre
+  labels:
+    app: prophetsim
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prophetsim
+  template:
+    metadata:
+      labels:
+        app: prophetsim
+    spec:
+      containers:
+        - name: prophetsim
+          image: sohamsal2026/prophetsim:v1
+          imagePullPolicy: Always
+          env:
+            - name: FLT_PROM_URL
+              value: "https://prometheus.sitopflab03.otv-staging.com" 
+            - name: FLT_PROM_ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: prometheus-auth
+                  key: token
+            - name: PROPHETIG_DB_URI
+              value: "postgresql://fourier_user:fourier_pass@fourier-postgres-service:5432/fourier_db"
+            - name: PROPHET_INTERVAL_WIDTH
+              value: "0.99"
+            - name: PROPHET_CHANGEPOINT_PRIOR_SCALE
+              value: "0.05"
+            - name: PROPHET_SEASONALITY_PRIOR_SCALE
+              value: "10.0"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/prophetsim
+          resources:
+            requests:  
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+      volumes:
+        - name: config-volume
+          configMap:
+            name: prophetsim-config
