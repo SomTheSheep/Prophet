@@ -7,7 +7,7 @@ metadata:
 data:
   simulation.json: |
     {
-      "LIVE_START": "2026-04-29T00:01:43Z",
+      "LIVE_START": "2026-05-01T00:01:43Z",
       "LIVE_END": "2026-05-04T12:05:30Z",
       "TRAIN_WINDOW_DAYS": 12,
       "RETRAIN_EVERY_HOURS": 24
